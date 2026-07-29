@@ -3,17 +3,28 @@ import { sql } from './db';
 import { makeId } from './ids';
 
 export const defaultStyle: StyleSettings = {
-  weight: 0, width: 100, slant: 0, roundness: 0, spacing: 0, lineHeight: 150,
+  weight: 0,
+  width: 100,
+  slant: 0,
+  roundness: 0,
+  spacing: 0,
+  lineHeight: 150,
 };
 
 export async function listProjects() {
   return sql`select * from projects order by updated_at desc`;
 }
+
 export async function getProject(projectId: string) {
   const [row] = await sql`select * from projects where id=${projectId}`;
   return row ?? null;
 }
-export async function createProject(input: {name:string; familyName:string; description?:string}) {
+
+export async function createProject(input: {
+  name: string;
+  familyName: string;
+  description?: string;
+}) {
   const id = makeId('prj');
   const [row] = await sql`
     insert into projects (id,name,family_name,description,style)
@@ -21,10 +32,19 @@ export async function createProject(input: {name:string; familyName:string; desc
     returning *`;
   return row;
 }
+
 export async function listUploads(projectId: string) {
   return sql`select * from uploads where project_id=${projectId} order by created_at`;
 }
-export async function createUpload(input: {projectId:string; originalName:string; pathname:string; blobUrl:string; contentType:string; size:number}) {
+
+export async function createUpload(input: {
+  projectId: string;
+  originalName: string;
+  pathname: string;
+  blobUrl: string;
+  contentType: string;
+  size: number;
+}) {
   const id = makeId('upl');
   const [row] = await sql`
     insert into uploads (id,project_id,original_name,pathname,blob_url,content_type,size)
@@ -34,7 +54,11 @@ export async function createUpload(input: {projectId:string; originalName:string
   await sql`update projects set current_step='upload', updated_at=now() where id=${input.projectId}`;
   return row;
 }
-export async function listGlyphs(projectId: string, filters: {status?:string; page?:number; q?:string}={}) {
+
+export async function listGlyphs(
+  projectId: string,
+  filters: { status?: string; page?: number; q?: string } = {},
+) {
   const status = filters.status && filters.status !== 'all' ? filters.status : null;
   const page = filters.page || null;
   const q = filters.q ? `%${filters.q}%` : null;
@@ -46,6 +70,7 @@ export async function listGlyphs(projectId: string, filters: {status?:string; pa
       and (${q}::text is null or character ilike ${q} or unicode ilike ${q} or cell_id ilike ${q})
     order by page, cell_id`;
 }
+
 export async function replaceGlyphs(projectId: string, glyphs: GlyphResult[]) {
   await sql.begin(async (tx: any) => {
     await tx`delete from glyphs where project_id=${projectId}`;
@@ -56,11 +81,20 @@ export async function replaceGlyphs(projectId: string, glyphs: GlyphResult[]) {
         values (${projectId},${glyph.page},${glyph.cellId},${glyph.character},${glyph.unicode},${glyph.status},
           ${glyph.rawIou},${glyph.tolerantF1},${glyph.inkRatio},${glyph.svgUrl},${glyph.metadataUrl})`;
     }
-    const reviewCount = glyphs.filter(g => g.status !== 'ok').length;
-    await tx`update projects set glyph_count=${glyphs.length}, review_count=${reviewCount}, current_step='review', status='ready', progress=55, updated_at=now() where id=${projectId}`;
+    const reviewCount = glyphs.filter((glyph) => glyph.status !== 'ok').length;
+    await tx`
+      update projects
+      set glyph_count=${glyphs.length}, review_count=${reviewCount}, current_step='review',
+          status='ready', progress=55, updated_at=now()
+      where id=${projectId}`;
   });
 }
-export async function createJob(projectId: string, kind: JobKind, payload: Record<string, unknown>) {
+
+export async function createJob(
+  projectId: string,
+  kind: JobKind,
+  payload: Record<string, unknown>,
+) {
   const id = makeId('job');
   const idempotencyKey = `${projectId}:${kind}:${Date.now()}`;
   const [row] = await sql`
@@ -68,11 +102,68 @@ export async function createJob(projectId: string, kind: JobKind, payload: Recor
     values (${id},${projectId},${kind},${sql.json(payload)},${idempotencyKey}) returning *`;
   return row;
 }
+
 export async function getJob(jobId: string) {
   const [row] = await sql`select * from jobs where id=${jobId}`;
   return row ?? null;
 }
-export async function updateJob(jobId: string, patch: {status?:string; progress?:number; message?:string; result?:unknown; artifactUrl?:string|null; error?:string|null}) {
+
+export async function getLatestCompletedExport(projectId: string) {
+  const [row] = await sql`
+    select * from jobs
+    where project_id=${projectId}
+      and kind='export'
+      and status='complete'
+      and artifact_url is not null
+    order by updated_at desc
+    limit 1`;
+  return row ?? null;
+}
+
+export async function getActiveProjectJob(projectId: string) {
+  const [row] = await sql`
+    select id, kind, status from jobs
+    where project_id=${projectId}
+      and status in ('queued','leased','running')
+    order by created_at
+    limit 1`;
+  return row ?? null;
+}
+
+export async function listProjectAssetUrls(projectId: string): Promise<string[]> {
+  const rows = await sql`
+    select url from (
+      select blob_url as url from uploads where project_id=${projectId}
+      union
+      select svg_url as url from glyphs where project_id=${projectId}
+      union
+      select metadata_url as url from glyphs where project_id=${projectId}
+      union
+      select artifact_url as url from jobs
+        where project_id=${projectId} and artifact_url is not null
+    ) assets
+    where url is not null`;
+  return rows
+    .map((row: { url?: unknown }) => String(row.url ?? ''))
+    .filter(Boolean);
+}
+
+export async function deleteProjectRecord(projectId: string) {
+  const [row] = await sql`delete from projects where id=${projectId} returning id`;
+  return row ?? null;
+}
+
+export async function updateJob(
+  jobId: string,
+  patch: {
+    status?: string;
+    progress?: number;
+    message?: string;
+    result?: unknown;
+    artifactUrl?: string | null;
+    error?: string | null;
+  },
+) {
   const [row] = await sql`
     update jobs set
       status=coalesce(${patch.status ?? null},status),
@@ -84,6 +175,7 @@ export async function updateJob(jobId: string, patch: {status?:string; progress?
     where id=${jobId} returning *`;
   return row ?? null;
 }
+
 export async function leaseNextJob() {
   return sql.begin(async (tx: any) => {
     const [row] = await tx`
@@ -97,12 +189,18 @@ export async function leaseNextJob() {
     return leased;
   });
 }
+
 export async function setProjectStyle(projectId: string, style: StyleSettings) {
-  const [row] = await sql`update projects set style=${sql.json(style)},updated_at=now() where id=${projectId} returning *`;
+  const [row] = await sql`
+    update projects set style=${sql.json(style)},updated_at=now()
+    where id=${projectId} returning *`;
   return row ?? null;
 }
 
-export async function blobBelongsToProject(projectId: string, url: string): Promise<boolean> {
+export async function blobBelongsToProject(
+  projectId: string,
+  url: string,
+): Promise<boolean> {
   const [row] = await sql`
     select 1 as ok from (
       select blob_url as url from uploads where project_id=${projectId}

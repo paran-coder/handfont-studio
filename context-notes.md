@@ -1,35 +1,29 @@
-# HandFont Studio v3.3.1 Context Notes
+# HandFont Studio v3.3.4 Context Notes
 
 ## 목표
-- v3.2.0 배포형 모노레포를 GitHub 최초 Push와 Vercel Import 직전 상태로 만든다.
-- 저장소에 비밀정보, 사용자 업로드, 폰트 바이너리, 런타임 산출물이 들어가지 않도록 자동 검사한다.
-- Vercel Development·Preview·Production 환경별 변수를 명확히 분리한다.
-- 최초 DB 마이그레이션, 웹 배포, 워커 배포, 종단 스모크 테스트 순서를 재현 가능한 체크리스트로 제공한다.
+- 배포된 웹앱에서 사용자가 빈 손글씨 작성 양식을 바로 내려받을 수 있게 한다.
+- 생성한 프로젝트를 화면에서 삭제하고, 연결된 업로드·글리프·완성 폰트 파일까지 함께 정리한다.
+- 완료된 TTF 패키지를 프로젝트를 다시 연 뒤에도 재다운로드할 수 있게 한다.
 
-## 유지할 구조
-- `apps/web`: Next.js 웹·제어 API, Vercel 배포
-- `workers/font-engine`: 독립 Docker 폰트 처리 워커
-- `packages/contracts`: 웹·워커 공용 타입
-- `infrastructure/migrations`: PostgreSQL 스키마
-- `infrastructure/vercel`: Vercel 프로젝트 설정 참고 자료
+## 구현 범위
+- `apps/web/public/templates`: 9페이지 작성 양식 PNG와 통합 PDF·PNG ZIP
+- `apps/web/app/api/projects/[projectId]`: 프로젝트 조회와 삭제 API
+- `apps/web/lib/repository.ts`: 최신 내보내기 결과 조회, 활성 작업 검사, 프로젝트 파일 목록·삭제
+- `apps/web/components`: 작성 양식 다운로드와 프로젝트 삭제 UI
+- 프로젝트 목록·상세 화면: 삭제 버튼, 완료 결과 재다운로드 버튼
 
-## v3.3.1 추가 범위
-- GitHub 최초 커밋·Push 자동화 스크립트
-- 저장소 사전 검사와 환경변수 검사
-- 랜덤 워커 공유 비밀 생성기
-- GitHub Pull Request 템플릿, Dependabot, 보안 정책
-- 브랜치 전략과 배포 체크리스트
-- 환경별 변수 행렬과 Vercel 설정 순서
-- 배포 후 스모크 테스트 절차
+## 삭제 정책
+- 상태가 `queued`, `leased`, `running`인 작업이 있으면 프로젝트 삭제를 막는다.
+- 로컬 저장소의 파일은 허용된 Blob 루트 아래에서만 삭제한다.
+- Vercel Blob 파일은 프로젝트 DB에 연결된 URL만 삭제한다.
+- 파일 정리가 성공한 뒤 PostgreSQL 프로젝트 행을 삭제하며, 하위 행은 외래키 cascade로 정리한다.
 
-## 경계
-- GitHub·Vercel 계정에 직접 로그인하거나 원격 저장소를 생성하지 않는다.
-- 실제 DATABASE_URL, Blob 토큰, Queue 자격증명, 워커 URL을 소스에 기록하지 않는다.
-- 외부 워커 공급자는 사용자가 선택한다.
-- npm 레지스트리에 접근할 수 없는 실행 환경이므로 lockfile 생성과 실제 Next.js production build는 GitHub Actions에서 완료한다.
+## 다운로드 정책
+- 작성 양식은 사용자 데이터가 없는 정적 자산이다.
+- PDF는 9페이지 A4 문서이며, PNG 묶음은 ZIP으로 제공한다.
+- 완성 폰트는 가장 최근의 완료된 `export` 작업 중 `artifact_url`이 있는 결과를 표시한다.
 
-## v3.3.1 개인정보 정리
-- 사용자 Flexcil 스크린샷 3장과 파생된 보정 페이지·글리프 검수표·폰트 미리보기를 제거한다.
-- HTML 미리보기의 사용자 손글씨 SVG 105개를 합성 시스템 글리프로 교체한다.
-- 알려진 원본·파생 파일 SHA-256과 민감 문자열을 Git Push 전 자동 검사한다.
-- Queue/API 메시지 schemaVersion은 호환성을 위해 3.3.0을 유지한다.
+## 운영 경계
+- 현재 버전에는 사용자 로그인과 프로젝트 소유권 격리가 없다.
+- 공개 서비스 전에는 인증·권한 검사를 추가해야 한다.
+- Queue/API 메시지 `schemaVersion`은 기존 워커 호환성을 위해 `3.3.0`을 유지한다.

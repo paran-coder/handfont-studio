@@ -1,25 +1,29 @@
-# HandFont Studio v3.3.1
+# HandFont Studio v3.3.4
 
-손글씨 작성본을 업로드해 SVG 글리프와 TTF 폰트로 변환하는 **GitHub·Vercel 최초 배포 준비형 모노레포**입니다.
+손글씨 작성 양식을 내려받고, 작성본을 업로드해 SVG 글리프와 TTF 폰트로 변환하는 GitHub·Vercel 배포형 모노레포입니다.
+
+## v3.3.4 주요 기능
+
+- 9페이지 손글씨 작성 양식 PDF 다운로드
+- 페이지별 PNG 묶음 ZIP 다운로드
+- 프로젝트 목록·상세 화면에서 프로젝트 삭제
+- 삭제 시 업로드 이미지, 글리프 SVG·메타데이터, 완성 폰트 파일 정리
+- 프로젝트를 다시 연 뒤에도 최신 TTF 결과 재다운로드
+- 처리 중 작업이 있는 프로젝트의 실수 삭제 방지
 
 ## 구성
 
 - `apps/web`: Next.js App Router 웹 UI와 제어 API
+- `apps/web/public/templates`: 사용자 데이터가 없는 작성 양식 자산
 - `workers/font-engine`: 독립 Docker Python 폰트 워커
 - `packages/contracts`: 웹·워커 공용 계약
 - `infrastructure/migrations`: PostgreSQL 마이그레이션
-- `infrastructure/vercel`: Vercel 설정 참고 자료
-- `scripts`: 저장소·환경변수·최초 Push 사전 검사
-- `docs`: GitHub, Vercel, 워커, 보안, 스모크 테스트 문서
+- `scripts`: 저장소·환경변수·개인정보 사전 검사
 
-## 최초 실행
+## 로컬 실행
 
 ```bash
 cp .env.example .env
-node scripts/generate-worker-secret.mjs
-# 출력된 값을 .env의 WORKER_SHARED_SECRET에 입력
-
-docker compose -f infrastructure/docker-compose.local.yml up -d postgres
 corepack enable
 pnpm install
 pnpm db:migrate
@@ -34,50 +38,25 @@ python -m pip install -r requirements.txt
 QUEUE_DRIVER=local python -m worker.local_runner
 ```
 
-## GitHub 최초 Push
+## Vercel 배포 설정
 
-```bash
-node scripts/repo-preflight.mjs
-bash scripts/first-commit.sh https://github.com/<owner>/<repo>.git
-```
-
-원격 저장소가 이미 연결되어 있으면 URL 없이 실행할 수 있습니다.
-
-```bash
-bash scripts/first-commit.sh
-```
-
-상세 순서는 `docs/github-first-push-v3.3.1.md`를 따릅니다.
-
-## Vercel 배포
-
-Vercel 프로젝트의 Root Directory를 `apps/web`으로 지정하고, **Root Directory 밖의 소스 포함 옵션**을 활성화합니다. 이후 PostgreSQL, Private Blob, Queue를 연결하고 환경변수를 Development → Preview → Production 순서로 입력합니다.
-
-- 배포 체크리스트: `docs/deployment-checklist-v3.3.1.md`
-- 환경변수 행렬: `docs/environment-variables-v3.3.1.md`
-- Vercel 절차: `docs/vercel-deployment-v3.3.1.md`
-- 워커 절차: `docs/worker-deployment-v3.3.1.md`
+- Root Directory: `apps/web`
+- Include files outside the root directory: Enabled
+- Install Command: `cd ../.. && corepack prepare pnpm@10.14.0 --activate && pnpm install`
+- Build Command: `cd ../.. && pnpm --filter @handfont/web build`
+- 필수 환경변수: `DATABASE_URL`, `WORKER_SHARED_SECRET`
+- 운영 기능용 연결: Private Vercel Blob, Queue, 외부 Python 워커
 
 ## 안전장치
 
 ```bash
-node scripts/repo-preflight.mjs
-node scripts/check-env.mjs .env
+pnpm privacy:check
+pnpm repo:check
+pnpm test
 ```
 
-사전 검사는 비밀정보 후보, 폰트 바이너리, 사용자 런타임 파일, 버전 불일치와 필수 배포 파일 누락을 검사합니다.
-
-
-## 개인정보 안전 패치
-
-- 사용자 업로드 원본과 그 파생 이미지·SVG를 저장소에서 제거했습니다.
-- 브라우저 미리보기는 사용자 데이터와 무관한 합성 글리프만 사용합니다.
-- `node scripts/privacy-preflight.mjs`가 알려진 샘플 해시, 원본 파일명, Base64 글리프 임베딩과 공개 데모 폴더의 사용자 산출물을 검사합니다.
-- GitHub Push 전 `pnpm privacy:check`와 `pnpm repo:check`를 모두 실행해야 합니다.
+프로젝트 삭제 API는 DB에 연결된 파일만 정리하며, 처리 중인 작업이 있으면 삭제를 거부합니다.
 
 ## 운영 경계
 
-- v3.3.1에는 로그인·결제·사용자별 프로젝트 소유권 격리가 없습니다.
-- 최초 공개는 Vercel Deployment Protection을 적용한 비공개 베타가 적합합니다.
-- OpenCV·PDF·SVG·TTF 처리는 독립 워커에서 수행합니다.
-- 실제 비밀값은 `.env`나 Vercel·워커 환경변수에만 저장하고 Git에 커밋하지 않습니다.
+현재 버전에는 로그인·사용자별 프로젝트 소유권 검사가 없습니다. 소규모 비공개 베타 이후 공개하기 전 인증과 권한 검사를 추가해야 합니다.

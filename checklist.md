@@ -1,4 +1,4 @@
-# HandFont Studio v3.3.1 Checklist
+# HandFont Studio v3.3.4 Checklist
 
 ## 기본 문서
 - [x] context-notes.md 갱신
@@ -6,60 +6,34 @@
 - [x] README.md 갱신
 - [x] User manual.md 갱신
 
-## GitHub 최초 커밋
-- [x] 저장소 사전 검사 스크립트
-- [x] 워커 공유 비밀 생성기
-- [x] 최초 커밋·원격 Push 스크립트
-- [x] Pull Request 템플릿
-- [x] Dependabot 설정
-- [x] SECURITY.md와 CONTRIBUTING.md
-- [x] CI 최소 권한·동시 실행 제어
-- [x] 폰트·런타임·비밀정보 유입 검사
+## 작성 양식 다운로드
+- [x] 9페이지 PNG 자산 복사
+- [x] 통합 A4 PDF 생성
+- [x] PNG ZIP 생성
+- [x] 홈 화면 다운로드 버튼
+- [x] 프로젝트 업로드 화면 다운로드 버튼
+- [x] PDF 렌더 검증
 
-## Vercel 배포 준비
-- [x] Development·Preview·Production 변수 행렬
-- [x] Vercel 프로젝트 설정 참고 파일
-- [x] 환경변수 로컬 검증 스크립트
-- [x] 모노레포 Root Directory 설정 절차
-- [x] DB 마이그레이션 순서
-- [x] Private Blob·Queue·워커 연결 순서
-- [x] 배포 후 스모크 테스트 절차
+## 프로젝트 삭제
+- [x] 삭제 API 추가
+- [x] 활성 작업 삭제 방지
+- [x] 업로드·SVG·메타데이터·폰트 Blob 목록 수집
+- [x] Vercel Blob 삭제
+- [x] 로컬 Blob 안전 삭제
+- [x] PostgreSQL 프로젝트 cascade 삭제
+- [x] 목록·상세 화면 삭제 버튼
+- [x] 삭제 확인 창과 오류 표시
+
+## 결과 재다운로드
+- [x] 최신 완료 export 작업 조회
+- [x] 프로젝트 상세 화면에 재다운로드 표시
+- [x] 비공개 Blob 프록시 재사용
 
 ## 검증
-- [ ] pnpm lockfile 생성
-- [ ] pnpm install --frozen-lockfile
+- [x] TypeScript 타입 검사
 - [ ] Next.js production build
-- [x] Node 스크립트 문법 검사
+- [x] 웹 계약 테스트
 - [x] Python 워커 테스트
+- [x] 개인정보 사전 검사
 - [x] 저장소 사전 검사
-- [x] ZIP 내 금지 파일 검사
-
-## 사용자가 계정에서 수행할 작업
-- [ ] GitHub 빈 저장소 생성
-- [ ] 최초 Push
-- [ ] GitHub Push Protection 활성화
-- [ ] Vercel GitHub 저장소 Import
-- [ ] PostgreSQL 연결
-- [ ] Private Blob 생성
-- [ ] Queue 활성화
-- [ ] 환경변수 입력
-- [ ] 최초 DB 마이그레이션
-- [ ] 외부 워커 배포
-- [ ] Preview 스모크 테스트
-- [ ] Production 승격
-
-## v3.3.1 개인정보 정리
-- [x] 원본 스크린샷 3장 제거
-- [x] 사용자 파생 데모 이미지 제거
-- [x] HTML의 사용자 손글씨 SVG 제거
-- [x] 합성 익명 데모로 교체
-- [x] 개인정보 사전 검사 스크립트 추가
-- [ ] GitHub Push 직전 privacy:check 재실행
-
-## v3.3.2 OG 메타데이터
-
-- [x] 1200×630 PNG 생성
-- [x] Open Graph 이미지 파일 규칙 적용
-- [x] Twitter Card 이미지 파일 규칙 적용
-- [x] OG/Twitter 제목과 설명 설정
-- [x] 이미지 대체 텍스트 추가
+- [x] ZIP 무결성 검사

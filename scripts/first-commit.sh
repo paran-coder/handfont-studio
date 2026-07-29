@@ -24,7 +24,7 @@ git add .
 if git diff --cached --quiet; then
   echo "커밋할 변경 사항이 없습니다."
 else
-  git commit -m "chore: prepare HandFont Studio v3.3.1 privacy-safe deployment"
+  git commit -m "chore: prepare HandFont Studio v3.3.4 feature-complete deployment"
 fi
 
 REMOTE_URL="${1:-}"

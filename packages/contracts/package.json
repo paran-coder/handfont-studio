@@ -1,6 +1,6 @@
 {
   "name": "@handfont/contracts",
-  "version": "3.3.1",
+  "version": "3.3.4",
   "private": true,
   "type": "module",
   "exports": {

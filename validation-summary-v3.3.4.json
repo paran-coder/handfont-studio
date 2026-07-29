@@ -1,0 +1,28 @@
+{
+  "version": "3.3.4",
+  "features": {
+    "templatePdfDownload": true,
+    "templatePngZipDownload": true,
+    "projectDelete": true,
+    "activeJobDeleteProtection": true,
+    "associatedAssetCleanup": true,
+    "savedArtifactRedownload": true
+  },
+  "validation": {
+    "webContractTests": {
+      "passed": 7,
+      "total": 7
+    },
+    "workerTests": {
+      "passed": 4,
+      "total": 4
+    },
+    "typescriptStrictCheck": "passed",
+    "templatePdfPages": 9,
+    "templatePngPages": 9,
+    "privacyPreflight": "passed",
+    "repositoryPreflight": "passed",
+    "nextProductionBuild": "not_run_registry_unavailable",
+    "zipIntegrity": "passed"
+  }
+}
