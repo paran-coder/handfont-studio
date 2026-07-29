@@ -1,0 +1,2353 @@
+{
+  "build": {
+    "schema_version": "1.5.0",
+    "font": "HandFontStudioPoc-Regular.ttf",
+    "sha256": "91ac66fb84aa85509b9510e7f3246844ac3b34b7ac19f35598155551729f4544",
+    "family_name": "HandFont Studio PoC",
+    "style_name": "Regular",
+    "units_per_em": 1000,
+    "glyph_count": 90,
+    "mapped_codepoints": 89,
+    "input_glyphs": 88,
+    "required_tables": [
+      "OS/2",
+      "cmap",
+      "glyf",
+      "head",
+      "hhea",
+      "hmtx",
+      "loca",
+      "maxp",
+      "name",
+      "post"
+    ],
+    "missing_tables": [],
+    "bounds_violations": [],
+    "metrics": [
+      {
+        "character": "!",
+        "codepoint": 33,
+        "glyph_name": "exclam",
+        "category": "기호",
+        "source_svg": "/mnt/data/handfont-studio-v1.5.0/services/font-builder/examples/poc-source-v1.5.0/glyphs/U+0021/glyph.svg",
+        "source_bbox": [
+          190.5,
+          107.5,
+          228.5,
+          311.5
+        ],
+        "font_bbox": [
+          45,
+          0,
+          175,
+          700
+        ],
+        "advance_width": 230,
+        "left_side_bearing": 45,
+        "right_side_bearing": 54,
+        "vertical_class": "full-mark",
+        "scale": 3.431373,
+        "contour_count": 2,
+        "hole_count": 0
+      },
+      {
+        "character": "\"",
+        "codepoint": 34,
+        "glyph_name": "quotedbl",
+        "category": "기호",
+        "source_svg": "/mnt/data/handfont-studio-v1.5.0/services/font-builder/examples/poc-source-v1.5.0/glyphs/U+0022/glyph.svg",
+        "source_bbox": [
+          172.5,
+          103.5,
+          247.5,
+          183.5
+        ],
+        "font_bbox": [
+          50,
+          450,
+          284,
+          700
+        ],
+        "advance_width": 340,
+        "left_side_bearing": 50,
+        "right_side_bearing": 55,
+        "vertical_class": "high-mark",
+        "scale": 3.125,
+        "contour_count": 2,
+        "hole_count": 0
+      },
+      {
+        "character": "#",
+        "codepoint": 35,
+        "glyph_name": "numbersign",
+        "category": "기호",
+        "source_svg": "/mnt/data/handfont-studio-v1.5.0/services/font-builder/examples/poc-source-v1.5.0/glyphs/U+0023/glyph.svg",
+        "source_bbox": [
+          137.518,
+          114.5,
+          282.484,
+          304.5
+        ],
+        "font_bbox": [
+          50,
+          0,
+          584,
+          700
+        ],
+        "advance_width": 640,
+        "left_side_bearing": 50,
+        "right_side_bearing": 55,
+        "vertical_class": "full-symbol",
+        "scale": 3.684211,
+        "contour_count": 2,
+        "hole_count": 1
+      },
+      {
+        "character": "$",
+        "codepoint": 36,
+        "glyph_name": "dollar",
+        "category": "기호",
+        "source_svg": "/mnt/data/handfont-studio-v1.5.0/services/font-builder/examples/poc-source-v1.5.0/glyphs/U+0024/glyph.svg",
+        "source_bbox": [
+          146.5,
+          89.5,
+          273.5,
+          329.484
+        ],
+        "font_bbox": [
+          60,
+          -80,
+          499,
+          750
+        ],
+        "advance_width": 560,
+        "left_side_bearing": 60,
+        "right_side_bearing": 60,
+        "vertical_class": "currency-symbol",
+        "scale": 3.458557,
+        "contour_count": 3,
+        "hole_count": 2
+      },
+      {
+        "character": "%",
+        "codepoint": 37,
+        "glyph_name": "percent",
+        "category": "기호",
+        "source_svg": "/mnt/data/handfont-studio-v1.5.0/services/font-builder/examples/poc-source-v1.5.0/glyphs/U+0025/glyph.svg",
+        "source_bbox": [
+          105.5,
+          106.58,
+          315.5,
+          312.481
+        ],
+        "font_bbox": [
+          55,
+          0,
+          769,
+          700
+        ],
+        "advance_width": 830,
+        "left_side_bearing": 55,
+        "right_side_bearing": 61,
+        "vertical_class": "full-symbol",
+        "scale": 3.399688,
+        "contour_count": 4,
+        "hole_count": 2
+      },
+      {
+        "character": "&",
+        "codepoint": 38,
+        "glyph_name": "ampersand",
+        "category": "기호",
+        "source_svg": "/mnt/data/handfont-studio-v1.5.0/services/font-builder/examples/poc-source-v1.5.0/glyphs/U+0026/glyph.svg",
+        "source_bbox": [
+          122.5,
+          111.5,
+          306.5,
+          307.5
+        ],
+        "font_bbox": [
+          55,
+          0,
+          712,
+          700
+        ],
+        "advance_width": 770,
+        "left_side_bearing": 55,
+        "right_side_bearing": 57,
+        "vertical_class": "full-symbol",
+        "scale": 3.571429,
+        "contour_count": 3,
+        "hole_count": 2
+      },
+      {
+        "character": "'",
+        "codepoint": 39,
+        "glyph_name": "quotesingle",
+        "category": "기호",
+        "source_svg": "/mnt/data/handfont-studio-v1.5.0/services/font-builder/examples/poc-source-v1.5.0/glyphs/U+0027/glyph.svg",
+        "source_bbox": [
+          195.5,
+          103.5,
+          223.5,
+          183.5
+        ],
+        "font_bbox": [
+          45,
+          450,
+          133,
+          700
+        ],
+        "advance_width": 220,
+        "left_side_bearing": 45,
+        "right_side_bearing": 87,
+        "vertical_class": "high-mark",
+        "scale": 3.125,
+        "contour_count": 1,
+        "hole_count": 0
+      },
+      {
+        "character": "(",
+        "codepoint": 40,
+        "glyph_name": "parenleft",
+        "category": "기호",
+        "source_svg": "/mnt/data/handfont-studio-v1.5.0/services/font-builder/examples/poc-source-v1.5.0/glyphs/U+0028/glyph.svg",
+        "source_bbox": [
+          188.5,
+          92.5,
+          253.5,
+          325.5
+        ],
+        "font_bbox": [
+          45,
+          -200,
+          310,
+          750
+        ],
+        "advance_width": 360,
+        "left_side_bearing": 45,
+        "right_side_bearing": 49,
+        "vertical_class": "delimiter",
+        "scale": 4.077253,
+        "contour_count": 1,
+        "hole_count": 0
+      },
+      {
+        "character": ")",
+        "codepoint": 41,
+        "glyph_name": "parenright",
+        "category": "기호",
+        "source_svg": "/mnt/data/handfont-studio-v1.5.0/services/font-builder/examples/poc-source-v1.5.0/glyphs/U+0029/glyph.svg",
+        "source_bbox": [
+          166.5,
+          92.5,
+          230.5,
+          325.5
+        ],
+        "font_bbox": [
+          45,
+          -200,
+          306,
+          750
+        ],
+        "advance_width": 360,
+        "left_side_bearing": 45,
+        "right_side_bearing": 54,
+        "vertical_class": "delimiter",
+        "scale": 4.077253,
+        "contour_count": 1,
+        "hole_count": 0
+      },
+      {
+        "character": "+",
+        "codepoint": 43,
+        "glyph_name": "plus",
+        "category": "기호",
+        "source_svg": "/mnt/data/handfont-studio-v1.5.0/services/font-builder/examples/poc-source-v1.5.0/glyphs/U+002B/glyph.svg",
+        "source_bbox": [
+          140.5,
+          138.5,
+          278.5,
+          278.5
+        ],
+        "font_bbox": [
+          60,
+          100,
+          513,
+          560
+        ],
+        "advance_width": 580,
+        "left_side_bearing": 60,
+        "right_side_bearing": 66,
+        "vertical_class": "math-mark",
+        "scale": 3.285714,
+        "contour_count": 1,
+        "hole_count": 0
+      },
+      {
+        "character": ",",
+        "codepoint": 44,
+        "glyph_name": "comma",
+        "category": "기호",
+        "source_svg": "/mnt/data/handfont-studio-v1.5.0/services/font-builder/examples/poc-source-v1.5.0/glyphs/U+002C/glyph.svg",
+        "source_bbox": [
+          185.5,
+          168.5,
+          228.5,
+          250.5
+        ],
+        "font_bbox": [
+          45,
+          -150,
+          187,
+          120
+        ],
+        "advance_width": 240,
+        "left_side_bearing": 45,
+        "right_side_bearing": 53,
+        "vertical_class": "low-descender-mark",
+        "scale": 3.292683,
+        "contour_count": 1,
+        "hole_count": 0
+      },
+      {
+        "character": "-",
+        "codepoint": 45,
+        "glyph_name": "hyphen",
+        "category": "기호",
+        "source_svg": "/mnt/data/handfont-studio-v1.5.0/services/font-builder/examples/poc-source-v1.5.0/glyphs/U+002D/glyph.svg",
+        "source_bbox": [
+          173.5,
+          168.5,
+          245.5,
+          190.5
+        ],
+        "font_bbox": [
+          50,
+          230,
+          377,
+          330
+        ],
+        "advance_width": 430,
+        "left_side_bearing": 50,
+        "right_side_bearing": 52,
+        "vertical_class": "center-mark",
+        "scale": 4.545455,
+        "contour_count": 1,
+        "hole_count": 0
+      },
+      {
+        "character": ".",
+        "codepoint": 46,
+        "glyph_name": "period",
+        "category": "기호",
+        "source_svg": "/mnt/data/handfont-studio-v1.5.0/services/font-builder/examples/poc-source-v1.5.0/glyphs/U+002E/glyph.svg",
+        "source_bbox": [
+          190.5,
+          190.5,
+          228.5,
+          228.5
+        ],
+        "font_bbox": [
+          45,
+          0,
+          165,
+          120
+        ],
+        "advance_width": 220,
+        "left_side_bearing": 45,
+        "right_side_bearing": 55,
+        "vertical_class": "low-mark",
+        "scale": 3.157895,
+        "contour_count": 1,
+        "hole_count": 0
+      },
+      {
+        "character": "/",
+        "codepoint": 47,
+        "glyph_name": "slash",
+        "category": "기호",
+        "source_svg": "/mnt/data/handfont-studio-v1.5.0/services/font-builder/examples/poc-source-v1.5.0/glyphs/U+002F/glyph.svg",
+        "source_bbox": [
+          170.5,
+          106.5,
+          250.5,
+          312.5
+        ],
+        "font_bbox": [
+          50,
+          -200,
+          419,
+          750
+        ],
+        "advance_width": 470,
+        "left_side_bearing": 50,
+        "right_side_bearing": 51,
+        "vertical_class": "delimiter",
+        "scale": 4.61165,
+        "contour_count": 1,
+        "hole_count": 0
+      },
+      {
+        "character": "0",
+        "codepoint": 48,
+        "glyph_name": "zero",
+        "category": "숫자",
+        "source_svg": "/mnt/data/handfont-studio-v1.5.0/services/font-builder/examples/poc-source-v1.5.0/glyphs/U+0030/glyph.svg",
+        "source_bbox": [
+          145.5,
+          111.5,
+          274.5,
+          307.5
+        ],
+        "font_bbox": [
+          60,
+          0,
+          521,
+          700
+        ],
+        "advance_width": 590,
+        "left_side_bearing": 60,
+        "right_side_bearing": 69,
+        "vertical_class": "lining-digit",
+        "scale": 3.571429,
+        "contour_count": 2,
+        "hole_count": 1
+      },
+      {
+        "character": "1",
+        "codepoint": 49,
+        "glyph_name": "one",
+        "category": "숫자",
+        "source_svg": "/mnt/data/handfont-studio-v1.5.0/services/font-builder/examples/poc-source-v1.5.0/glyphs/U+0031/glyph.svg",
+        "source_bbox": [
+          164.5,
+          112.5,
+          259.5,
+          305.5
+        ],
+        "font_bbox": [
+          45,
+          0,
+          390,
+          700
+        ],
+        "advance_width": 440,
+        "left_side_bearing": 45,
+        "right_side_bearing": 50,
+        "vertical_class": "lining-digit",
+        "scale": 3.626943,
+        "contour_count": 1,
+        "hole_count": 0
+      },
+      {
+        "character": "2",
+        "codepoint": 50,
+        "glyph_name": "two",
+        "category": "숫자",
+        "source_svg": "/mnt/data/handfont-studio-v1.5.0/services/font-builder/examples/poc-source-v1.5.0/glyphs/U+0032/glyph.svg",
+        "source_bbox": [
+          141.585,
+          112.5,
+          273.5,
+          305.5
+        ],
+        "font_bbox": [
+          60,
+          0,
+          538,
+          700
+        ],
+        "advance_width": 600,
+        "left_side_bearing": 60,
+        "right_side_bearing": 61,
+        "vertical_class": "lining-digit",
+        "scale": 3.626943,
+        "contour_count": 1,
+        "hole_count": 0
+      },
+      {
+        "character": "3",
+        "codepoint": 51,
+        "glyph_name": "three",
+        "category": "숫자",
+        "source_svg": "/mnt/data/handfont-studio-v1.5.0/services/font-builder/examples/poc-source-v1.5.0/glyphs/U+0033/glyph.svg",
+        "source_bbox": [
+          141.5,
+          111.5,
+          269.5,
+          307.5
+        ],
+        "font_bbox": [
+          60,
+          0,
+          517,
+          700
+        ],
+        "advance_width": 580,
+        "left_side_bearing": 60,
+        "right_side_bearing": 62,
+        "vertical_class": "lining-digit",
+        "scale": 3.571429,
+        "contour_count": 1,
+        "hole_count": 0
+      },
+      {
+        "character": "4",
+        "codepoint": 52,
+        "glyph_name": "four",
+        "category": "숫자",
+        "source_svg": "/mnt/data/handfont-studio-v1.5.0/services/font-builder/examples/poc-source-v1.5.0/glyphs/U+0034/glyph.svg",
+        "source_bbox": [
+          139.532,
+          113.5,
+          275.5,
+          304.5
+        ],
+        "font_bbox": [
+          60,
+          0,
+          558,
+          700
+        ],
+        "advance_width": 620,
+        "left_side_bearing": 60,
+        "right_side_bearing": 61,
+        "vertical_class": "lining-digit",
+        "scale": 3.664921,
+        "contour_count": 2,
+        "hole_count": 1
+      },
+      {
+        "character": "5",
+        "codepoint": 53,
+        "glyph_name": "five",
+        "category": "숫자",
+        "source_svg": "/mnt/data/handfont-studio-v1.5.0/services/font-builder/examples/poc-source-v1.5.0/glyphs/U+0035/glyph.svg",
+        "source_bbox": [
+          145.531,
+          112.5,
+          271.5,
+          305.5
+        ],
+        "font_bbox": [
+          60,
+          0,
+          517,
+          700
+        ],
+        "advance_width": 580,
+        "left_side_bearing": 60,
+        "right_side_bearing": 63,
+        "vertical_class": "lining-digit",
+        "scale": 3.626943,
+        "contour_count": 1,
+        "hole_count": 0
+      },
+      {
+        "character": "6",
+        "codepoint": 54,
+        "glyph_name": "six",
+        "category": "숫자",
+        "source_svg": "/mnt/data/handfont-studio-v1.5.0/services/font-builder/examples/poc-source-v1.5.0/glyphs/U+0036/glyph.svg",
+        "source_bbox": [
+          146.5,
+          111.5,
+          277.5,
+          307.5
+        ],
+        "font_bbox": [
+          60,
+          0,
+          528,
+          700
+        ],
+        "advance_width": 590,
+        "left_side_bearing": 60,
+        "right_side_bearing": 62,
+        "vertical_class": "lining-digit",
+        "scale": 3.571429,
+        "contour_count": 2,
+        "hole_count": 1
+      },
+      {
+        "character": "7",
+        "codepoint": 55,
+        "glyph_name": "seven",
+        "category": "숫자",
+        "source_svg": "/mnt/data/handfont-studio-v1.5.0/services/font-builder/examples/poc-source-v1.5.0/glyphs/U+0037/glyph.svg",
+        "source_bbox": [
+          145.513,
+          112.518,
+          276.5,
+          305.5
+        ],
+        "font_bbox": [
+          60,
+          0,
+          535,
+          700
+        ],
+        "advance_width": 600,
+        "left_side_bearing": 60,
+        "right_side_bearing": 64,
+        "vertical_class": "lining-digit",
+        "scale": 3.627277,
+        "contour_count": 1,
+        "hole_count": 0
+      },
+      {
+        "character": "8",
+        "codepoint": 56,
+        "glyph_name": "eight",
+        "category": "숫자",
+        "source_svg": "/mnt/data/handfont-studio-v1.5.0/services/font-builder/examples/poc-source-v1.5.0/glyphs/U+0038/glyph.svg",
+        "source_bbox": [
+          145.5,
+          111.5,
+          273.5,
+          307.5
+        ],
+        "font_bbox": [
+          60,
+          0,
+          517,
+          700
+        ],
+        "advance_width": 580,
+        "left_side_bearing": 60,
+        "right_side_bearing": 62,
+        "vertical_class": "lining-digit",
+        "scale": 3.571429,
+        "contour_count": 3,
+        "hole_count": 2
+      },
+      {
+        "character": "9",
+        "codepoint": 57,
+        "glyph_name": "nine",
+        "category": "숫자",
+        "source_svg": "/mnt/data/handfont-studio-v1.5.0/services/font-builder/examples/poc-source-v1.5.0/glyphs/U+0039/glyph.svg",
+        "source_bbox": [
+          144.5,
+          111.5,
+          270.5,
+          307.5
+        ],
+        "font_bbox": [
+          60,
+          0,
+          510,
+          700
+        ],
+        "advance_width": 570,
+        "left_side_bearing": 60,
+        "right_side_bearing": 60,
+        "vertical_class": "lining-digit",
+        "scale": 3.571429,
+        "contour_count": 2,
+        "hole_count": 1
+      },
+      {
+        "character": ":",
+        "codepoint": 58,
+        "glyph_name": "colon",
+        "category": "기호",
+        "source_svg": "/mnt/data/handfont-studio-v1.5.0/services/font-builder/examples/poc-source-v1.5.0/glyphs/U+003A/glyph.svg",
+        "source_bbox": [
+          190.5,
+          137.5,
+          228.5,
+          280.5
+        ],
+        "font_bbox": [
+          45,
+          100,
+          151,
+          500
+        ],
+        "advance_width": 220,
+        "left_side_bearing": 45,
+        "right_side_bearing": 68,
+        "vertical_class": "mid-mark",
+        "scale": 2.797203,
+        "contour_count": 2,
+        "hole_count": 0
+      },
+      {
+        "character": ";",
+        "codepoint": 59,
+        "glyph_name": "semicolon",
+        "category": "기호",
+        "source_svg": "/mnt/data/handfont-studio-v1.5.0/services/font-builder/examples/poc-source-v1.5.0/glyphs/U+003B/glyph.svg",
+        "source_bbox": [
+          185.5,
+          119.5,
+          228.5,
+          299.5
+        ],
+        "font_bbox": [
+          45,
+          -120,
+          193,
+          500
+        ],
+        "advance_width": 240,
+        "left_side_bearing": 45,
+        "right_side_bearing": 46,
+        "vertical_class": "mid-descender-mark",
+        "scale": 3.444444,
+        "contour_count": 2,
+        "hole_count": 0
+      },
+      {
+        "character": "=",
+        "codepoint": 61,
+        "glyph_name": "equal",
+        "category": "기호",
+        "source_svg": "/mnt/data/handfont-studio-v1.5.0/services/font-builder/examples/poc-source-v1.5.0/glyphs/U+003D/glyph.svg",
+        "source_bbox": [
+          140.5,
+          154.5,
+          278.5,
+          233.5
+        ],
+        "font_bbox": [
+          60,
+          160,
+          619,
+          480
+        ],
+        "advance_width": 680,
+        "left_side_bearing": 60,
+        "right_side_bearing": 61,
+        "vertical_class": "math-mark",
+        "scale": 4.050633,
+        "contour_count": 2,
+        "hole_count": 0
+      },
+      {
+        "character": "?",
+        "codepoint": 63,
+        "glyph_name": "question",
+        "category": "기호",
+        "source_svg": "/mnt/data/handfont-studio-v1.5.0/services/font-builder/examples/poc-source-v1.5.0/glyphs/U+003F/glyph.svg",
+        "source_bbox": [
+          162.5,
+          107.5,
+          257.5,
+          311.5
+        ],
+        "font_bbox": [
+          50,
+          0,
+          376,
+          700
+        ],
+        "advance_width": 430,
+        "left_side_bearing": 50,
+        "right_side_bearing": 54,
+        "vertical_class": "full-mark",
+        "scale": 3.431373,
+        "contour_count": 2,
+        "hole_count": 0
+      },
+      {
+        "character": "@",
+        "codepoint": 64,
+        "glyph_name": "at",
+        "category": "기호",
+        "source_svg": "/mnt/data/handfont-studio-v1.5.0/services/font-builder/examples/poc-source-v1.5.0/glyphs/U+0040/glyph.svg",
+        "source_bbox": [
+          110.5,
+          106.5,
+          312.447,
+          311.5
+        ],
+        "font_bbox": [
+          55,
+          -80,
+          823,
+          700
+        ],
+        "advance_width": 880,
+        "left_side_bearing": 55,
+        "right_side_bearing": 56,
+        "vertical_class": "wide-symbol",
+        "scale": 3.804878,
+        "contour_count": 2,
+        "hole_count": 1
+      },
+      {
+        "character": "A",
+        "codepoint": 65,
+        "glyph_name": "A",
+        "category": "영문",
+        "source_svg": "/mnt/data/handfont-studio-v1.5.0/services/font-builder/examples/poc-source-v1.5.0/glyphs/U+0041/glyph.svg",
+        "source_bbox": [
+          112.5,
+          110.5,
+          306.0,
+          307.5
+        ],
+        "font_bbox": [
+          60,
+          0,
+          748,
+          700
+        ],
+        "advance_width": 810,
+        "left_side_bearing": 60,
+        "right_side_bearing": 62,
+        "vertical_class": "cap",
+        "scale": 3.553299,
+        "contour_count": 2,
+        "hole_count": 1
+      },
+      {
+        "character": "B",
+        "codepoint": 66,
+        "glyph_name": "B",
+        "category": "영문",
+        "source_svg": "/mnt/data/handfont-studio-v1.5.0/services/font-builder/examples/poc-source-v1.5.0/glyphs/U+0042/glyph.svg",
+        "source_bbox": [
+          126.5,
+          111.5,
+          287.468,
+          307.5
+        ],
+        "font_bbox": [
+          60,
+          0,
+          635,
+          700
+        ],
+        "advance_width": 700,
+        "left_side_bearing": 60,
+        "right_side_bearing": 65,
+        "vertical_class": "cap",
+        "scale": 3.571429,
+        "contour_count": 3,
+        "hole_count": 2
+      },
+      {
+        "character": "C",
+        "codepoint": 67,
+        "glyph_name": "C",
+        "category": "영문",
+        "source_svg": "/mnt/data/handfont-studio-v1.5.0/services/font-builder/examples/poc-source-v1.5.0/glyphs/U+0043/glyph.svg",
+        "source_bbox": [
+          125.525,
+          106.5,
+          297.5,
+          311.5
+        ],
+        "font_bbox": [
+          60,
+          0,
+          647,
+          700
+        ],
+        "advance_width": 710,
+        "left_side_bearing": 60,
+        "right_side_bearing": 62,
+        "vertical_class": "cap",
+        "scale": 3.414634,
+        "contour_count": 1,
+        "hole_count": 0
+      },
+      {
+        "character": "D",
+        "codepoint": 68,
+        "glyph_name": "D",
+        "category": "영문",
+        "source_svg": "/mnt/data/handfont-studio-v1.5.0/services/font-builder/examples/poc-source-v1.5.0/glyphs/U+0044/glyph.svg",
+        "source_bbox": [
+          108.5,
+          111.5,
+          307.5,
+          307.5
+        ],
+        "font_bbox": [
+          60,
+          0,
+          771,
+          700
+        ],
+        "advance_width": 840,
+        "left_side_bearing": 60,
+        "right_side_bearing": 69,
+        "vertical_class": "cap",
+        "scale": 3.571429,
+        "contour_count": 2,
+        "hole_count": 1
+      },
+      {
+        "character": "E",
+        "codepoint": 69,
+        "glyph_name": "E",
+        "category": "영문",
+        "source_svg": "/mnt/data/handfont-studio-v1.5.0/services/font-builder/examples/poc-source-v1.5.0/glyphs/U+0045/glyph.svg",
+        "source_bbox": [
+          132.5,
+          111.516,
+          287.482,
+          307.5
+        ],
+        "font_bbox": [
+          60,
+          0,
+          614,
+          700
+        ],
+        "advance_width": 680,
+        "left_side_bearing": 60,
+        "right_side_bearing": 66,
+        "vertical_class": "cap",
+        "scale": 3.571712,
+        "contour_count": 1,
+        "hole_count": 0
+      },
+      {
+        "character": "F",
+        "codepoint": 70,
+        "glyph_name": "F",
+        "category": "영문",
+        "source_svg": "/mnt/data/handfont-studio-v1.5.0/services/font-builder/examples/poc-source-v1.5.0/glyphs/U+0046/glyph.svg",
+        "source_bbox": [
+          136.5,
+          111.516,
+          282.5,
+          307.5
+        ],
+        "font_bbox": [
+          60,
+          0,
+          581,
+          700
+        ],
+        "advance_width": 650,
+        "left_side_bearing": 60,
+        "right_side_bearing": 68,
+        "vertical_class": "cap",
+        "scale": 3.571712,
+        "contour_count": 1,
+        "hole_count": 0
+      },
+      {
+        "character": "G",
+        "codepoint": 71,
+        "glyph_name": "G",
+        "category": "영문",
+        "source_svg": "/mnt/data/handfont-studio-v1.5.0/services/font-builder/examples/poc-source-v1.5.0/glyphs/U+0047/glyph.svg",
+        "source_bbox": [
+          118.5,
+          106.537,
+          311.482,
+          311.461
+        ],
+        "font_bbox": [
+          60,
+          0,
+          719,
+          700
+        ],
+        "advance_width": 780,
+        "left_side_bearing": 60,
+        "right_side_bearing": 60,
+        "vertical_class": "cap",
+        "scale": 3.4159,
+        "contour_count": 1,
+        "hole_count": 0
+      },
+      {
+        "character": "H",
+        "codepoint": 72,
+        "glyph_name": "H",
+        "category": "영문",
+        "source_svg": "/mnt/data/handfont-studio-v1.5.0/services/font-builder/examples/poc-source-v1.5.0/glyphs/U+0048/glyph.svg",
+        "source_bbox": [
+          105.5,
+          111.5,
+          313.5,
+          307.5
+        ],
+        "font_bbox": [
+          60,
+          0,
+          803,
+          700
+        ],
+        "advance_width": 870,
+        "left_side_bearing": 60,
+        "right_side_bearing": 67,
+        "vertical_class": "cap",
+        "scale": 3.571429,
+        "contour_count": 1,
+        "hole_count": 0
+      },
+      {
+        "character": "I",
+        "codepoint": 73,
+        "glyph_name": "I",
+        "category": "영문",
+        "source_svg": "/mnt/data/handfont-studio-v1.5.0/services/font-builder/examples/poc-source-v1.5.0/glyphs/U+0049/glyph.svg",
+        "source_bbox": [
+          168.5,
+          111.5,
+          250.5,
+          307.5
+        ],
+        "font_bbox": [
+          45,
+          0,
+          338,
+          700
+        ],
+        "advance_width": 390,
+        "left_side_bearing": 45,
+        "right_side_bearing": 52,
+        "vertical_class": "cap",
+        "scale": 3.571429,
+        "contour_count": 1,
+        "hole_count": 0
+      },
+      {
+        "character": "J",
+        "codepoint": 74,
+        "glyph_name": "J",
+        "category": "영문",
+        "source_svg": "/mnt/data/handfont-studio-v1.5.0/services/font-builder/examples/poc-source-v1.5.0/glyphs/U+004A/glyph.svg",
+        "source_bbox": [
+          159.5,
+          94.5,
+          252.5,
+          323.5
+        ],
+        "font_bbox": [
+          60,
+          0,
+          344,
+          700
+        ],
+        "advance_width": 410,
+        "left_side_bearing": 60,
+        "right_side_bearing": 65,
+        "vertical_class": "cap",
+        "scale": 3.056769,
+        "contour_count": 1,
+        "hole_count": 0
+      },
+      {
+        "character": "K",
+        "codepoint": 75,
+        "glyph_name": "K",
+        "category": "영문",
+        "source_svg": "/mnt/data/handfont-studio-v1.5.0/services/font-builder/examples/poc-source-v1.5.0/glyphs/U+004B/glyph.svg",
+        "source_bbox": [
+          123.5,
+          110.5,
+          305.5,
+          308.454
+        ],
+        "font_bbox": [
+          60,
+          0,
+          704,
+          700
+        ],
+        "advance_width": 770,
+        "left_side_bearing": 60,
+        "right_side_bearing": 66,
+        "vertical_class": "cap",
+        "scale": 3.536166,
+        "contour_count": 1,
+        "hole_count": 0
+      },
+      {
+        "character": "L",
+        "codepoint": 76,
+        "glyph_name": "L",
+        "category": "영문",
+        "source_svg": "/mnt/data/handfont-studio-v1.5.0/services/font-builder/examples/poc-source-v1.5.0/glyphs/U+004C/glyph.svg",
+        "source_bbox": [
+          137.5,
+          111.516,
+          289.486,
+          307.5
+        ],
+        "font_bbox": [
+          60,
+          0,
+          603,
+          700
+        ],
+        "advance_width": 670,
+        "left_side_bearing": 60,
+        "right_side_bearing": 67,
+        "vertical_class": "cap",
+        "scale": 3.571712,
+        "contour_count": 1,
+        "hole_count": 0
+      },
+      {
+        "character": "M",
+        "codepoint": 77,
+        "glyph_name": "M",
+        "category": "영문",
+        "source_svg": "/mnt/data/handfont-studio-v1.5.0/services/font-builder/examples/poc-source-v1.5.0/glyphs/U+004D/glyph.svg",
+        "source_bbox": [
+          85.5,
+          111.5,
+          334.5,
+          307.5
+        ],
+        "font_bbox": [
+          55,
+          31,
+          905,
+          700
+        ],
+        "advance_width": 960,
+        "left_side_bearing": 55,
+        "right_side_bearing": 55,
+        "vertical_class": "cap",
+        "scale": 3.413655,
+        "contour_count": 1,
+        "hole_count": 0
+      },
+      {
+        "character": "N",
+        "codepoint": 78,
+        "glyph_name": "N",
+        "category": "영문",
+        "source_svg": "/mnt/data/handfont-studio-v1.5.0/services/font-builder/examples/poc-source-v1.5.0/glyphs/U+004E/glyph.svg",
+        "source_bbox": [
+          108.5,
+          111.5,
+          313.5,
+          307.5
+        ],
+        "font_bbox": [
+          60,
+          0,
+          792,
+          700
+        ],
+        "advance_width": 860,
+        "left_side_bearing": 60,
+        "right_side_bearing": 67,
+        "vertical_class": "cap",
+        "scale": 3.571429,
+        "contour_count": 1,
+        "hole_count": 0
+      },
+      {
+        "character": "O",
+        "codepoint": 79,
+        "glyph_name": "O",
+        "category": "영문",
+        "source_svg": "/mnt/data/handfont-studio-v1.5.0/services/font-builder/examples/poc-source-v1.5.0/glyphs/U+004F/glyph.svg",
+        "source_bbox": [
+          114.5,
+          106.5,
+          304.5,
+          311.5
+        ],
+        "font_bbox": [
+          60,
+          0,
+          709,
+          700
+        ],
+        "advance_width": 770,
+        "left_side_bearing": 60,
+        "right_side_bearing": 61,
+        "vertical_class": "cap",
+        "scale": 3.414634,
+        "contour_count": 2,
+        "hole_count": 1
+      },
+      {
+        "character": "P",
+        "codepoint": 80,
+        "glyph_name": "P",
+        "category": "영문",
+        "source_svg": "/mnt/data/handfont-studio-v1.5.0/services/font-builder/examples/poc-source-v1.5.0/glyphs/U+0050/glyph.svg",
+        "source_bbox": [
+          133.5,
+          111.5,
+          288.475,
+          307.5
+        ],
+        "font_bbox": [
+          60,
+          0,
+          613,
+          700
+        ],
+        "advance_width": 680,
+        "left_side_bearing": 60,
+        "right_side_bearing": 66,
+        "vertical_class": "cap",
+        "scale": 3.571429,
+        "contour_count": 2,
+        "hole_count": 1
+      },
+      {
+        "character": "Q",
+        "codepoint": 81,
+        "glyph_name": "Q",
+        "category": "영문",
+        "source_svg": "/mnt/data/handfont-studio-v1.5.0/services/font-builder/examples/poc-source-v1.5.0/glyphs/U+0051/glyph.svg",
+        "source_bbox": [
+          114.5,
+          81.5,
+          304.5,
+          336.5
+        ],
+        "font_bbox": [
+          60,
+          0,
+          582,
+          700
+        ],
+        "advance_width": 650,
+        "left_side_bearing": 60,
+        "right_side_bearing": 68,
+        "vertical_class": "cap",
+        "scale": 2.745098,
+        "contour_count": 2,
+        "hole_count": 1
+      },
+      {
+        "character": "R",
+        "codepoint": 82,
+        "glyph_name": "R",
+        "category": "영문",
+        "source_svg": "/mnt/data/handfont-studio-v1.5.0/services/font-builder/examples/poc-source-v1.5.0/glyphs/U+0052/glyph.svg",
+        "source_bbox": [
+          127.5,
+          111.5,
+          300.5,
+          307.5
+        ],
+        "font_bbox": [
+          60,
+          0,
+          678,
+          700
+        ],
+        "advance_width": 740,
+        "left_side_bearing": 60,
+        "right_side_bearing": 62,
+        "vertical_class": "cap",
+        "scale": 3.571429,
+        "contour_count": 2,
+        "hole_count": 1
+      },
+      {
+        "character": "S",
+        "codepoint": 83,
+        "glyph_name": "S",
+        "category": "영문",
+        "source_svg": "/mnt/data/handfont-studio-v1.5.0/services/font-builder/examples/poc-source-v1.5.0/glyphs/U+0053/glyph.svg",
+        "source_bbox": [
+          146.513,
+          106.5,
+          276.464,
+          311.5
+        ],
+        "font_bbox": [
+          60,
+          0,
+          504,
+          700
+        ],
+        "advance_width": 570,
+        "left_side_bearing": 60,
+        "right_side_bearing": 66,
+        "vertical_class": "cap",
+        "scale": 3.414634,
+        "contour_count": 1,
+        "hole_count": 0
+      },
+      {
+        "character": "T",
+        "codepoint": 84,
+        "glyph_name": "T",
+        "category": "영문",
+        "source_svg": "/mnt/data/handfont-studio-v1.5.0/services/font-builder/examples/poc-source-v1.5.0/glyphs/U+0054/glyph.svg",
+        "source_bbox": [
+          128.0,
+          111.5,
+          292.5,
+          307.5
+        ],
+        "font_bbox": [
+          60,
+          0,
+          648,
+          700
+        ],
+        "advance_width": 710,
+        "left_side_bearing": 60,
+        "right_side_bearing": 62,
+        "vertical_class": "cap",
+        "scale": 3.571429,
+        "contour_count": 1,
+        "hole_count": 0
+      },
+      {
+        "character": "U",
+        "codepoint": 85,
+        "glyph_name": "U",
+        "category": "영문",
+        "source_svg": "/mnt/data/handfont-studio-v1.5.0/services/font-builder/examples/poc-source-v1.5.0/glyphs/U+0055/glyph.svg",
+        "source_bbox": [
+          106.0,
+          109.5,
+          313.5,
+          309.5
+        ],
+        "font_bbox": [
+          60,
+          0,
+          786,
+          700
+        ],
+        "advance_width": 850,
+        "left_side_bearing": 60,
+        "right_side_bearing": 63,
+        "vertical_class": "cap",
+        "scale": 3.5,
+        "contour_count": 1,
+        "hole_count": 0
+      },
+      {
+        "character": "V",
+        "codepoint": 86,
+        "glyph_name": "V",
+        "category": "영문",
+        "source_svg": "/mnt/data/handfont-studio-v1.5.0/services/font-builder/examples/poc-source-v1.5.0/glyphs/U+0056/glyph.svg",
+        "source_bbox": [
+          111.5,
+          110.5,
+          309.5,
+          307.5
+        ],
+        "font_bbox": [
+          60,
+          0,
+          764,
+          700
+        ],
+        "advance_width": 830,
+        "left_side_bearing": 60,
+        "right_side_bearing": 66,
+        "vertical_class": "cap",
+        "scale": 3.553299,
+        "contour_count": 1,
+        "hole_count": 0
+      },
+      {
+        "character": "W",
+        "codepoint": 87,
+        "glyph_name": "W",
+        "category": "영문",
+        "source_svg": "/mnt/data/handfont-studio-v1.5.0/services/font-builder/examples/poc-source-v1.5.0/glyphs/U+0057/glyph.svg",
+        "source_bbox": [
+          69.5,
+          110.5,
+          350.5,
+          307.5
+        ],
+        "font_bbox": [
+          55,
+          104,
+          905,
+          700
+        ],
+        "advance_width": 960,
+        "left_side_bearing": 55,
+        "right_side_bearing": 55,
+        "vertical_class": "cap",
+        "scale": 3.024911,
+        "contour_count": 1,
+        "hole_count": 0
+      },
+      {
+        "character": "X",
+        "codepoint": 88,
+        "glyph_name": "X",
+        "category": "영문",
+        "source_svg": "/mnt/data/handfont-studio-v1.5.0/services/font-builder/examples/poc-source-v1.5.0/glyphs/U+0058/glyph.svg",
+        "source_bbox": [
+          113.5,
+          111.5,
+          306.0,
+          307.5
+        ],
+        "font_bbox": [
+          60,
+          0,
+          748,
+          700
+        ],
+        "advance_width": 810,
+        "left_side_bearing": 60,
+        "right_side_bearing": 62,
+        "vertical_class": "cap",
+        "scale": 3.571429,
+        "contour_count": 1,
+        "hole_count": 0
+      },
+      {
+        "character": "Y",
+        "codepoint": 89,
+        "glyph_name": "Y",
+        "category": "영문",
+        "source_svg": "/mnt/data/handfont-studio-v1.5.0/services/font-builder/examples/poc-source-v1.5.0/glyphs/U+0059/glyph.svg",
+        "source_bbox": [
+          118.0,
+          111.5,
+          301.5,
+          307.5
+        ],
+        "font_bbox": [
+          60,
+          0,
+          715,
+          700
+        ],
+        "advance_width": 780,
+        "left_side_bearing": 60,
+        "right_side_bearing": 64,
+        "vertical_class": "cap",
+        "scale": 3.571429,
+        "contour_count": 1,
+        "hole_count": 0
+      },
+      {
+        "character": "Z",
+        "codepoint": 90,
+        "glyph_name": "Z",
+        "category": "영문",
+        "source_svg": "/mnt/data/handfont-studio-v1.5.0/services/font-builder/examples/poc-source-v1.5.0/glyphs/U+005A/glyph.svg",
+        "source_bbox": [
+          125.55,
+          111.5,
+          292.486,
+          307.5
+        ],
+        "font_bbox": [
+          60,
+          0,
+          656,
+          700
+        ],
+        "advance_width": 720,
+        "left_side_bearing": 60,
+        "right_side_bearing": 63,
+        "vertical_class": "cap",
+        "scale": 3.571429,
+        "contour_count": 1,
+        "hole_count": 0
+      },
+      {
+        "character": "[",
+        "codepoint": 91,
+        "glyph_name": "bracketleft",
+        "category": "기호",
+        "source_svg": "/mnt/data/handfont-studio-v1.5.0/services/font-builder/examples/poc-source-v1.5.0/glyphs/U+005B/glyph.svg",
+        "source_bbox": [
+          199.5,
+          93.5,
+          246.5,
+          325.5
+        ],
+        "font_bbox": [
+          45,
+          -200,
+          237,
+          750
+        ],
+        "advance_width": 290,
+        "left_side_bearing": 45,
+        "right_side_bearing": 52,
+        "vertical_class": "delimiter",
+        "scale": 4.094828,
+        "contour_count": 1,
+        "hole_count": 0
+      },
+      {
+        "character": "\\",
+        "codepoint": 92,
+        "glyph_name": "backslash",
+        "category": "기호",
+        "source_svg": "/mnt/data/handfont-studio-v1.5.0/services/font-builder/examples/poc-source-v1.5.0/glyphs/U+005C/glyph.svg",
+        "source_bbox": [
+          169.5,
+          106.5,
+          250.5,
+          312.5
+        ],
+        "font_bbox": [
+          50,
+          -200,
+          424,
+          750
+        ],
+        "advance_width": 480,
+        "left_side_bearing": 50,
+        "right_side_bearing": 56,
+        "vertical_class": "delimiter",
+        "scale": 4.61165,
+        "contour_count": 1,
+        "hole_count": 0
+      },
+      {
+        "character": "]",
+        "codepoint": 93,
+        "glyph_name": "bracketright",
+        "category": "기호",
+        "source_svg": "/mnt/data/handfont-studio-v1.5.0/services/font-builder/examples/poc-source-v1.5.0/glyphs/U+005D/glyph.svg",
+        "source_bbox": [
+          172.5,
+          93.5,
+          220.5,
+          325.5
+        ],
+        "font_bbox": [
+          45,
+          -200,
+          242,
+          750
+        ],
+        "advance_width": 290,
+        "left_side_bearing": 45,
+        "right_side_bearing": 48,
+        "vertical_class": "delimiter",
+        "scale": 4.094828,
+        "contour_count": 1,
+        "hole_count": 0
+      },
+      {
+        "character": "_",
+        "codepoint": 95,
+        "glyph_name": "underscore",
+        "category": "기호",
+        "source_svg": "/mnt/data/handfont-studio-v1.5.0/services/font-builder/examples/poc-source-v1.5.0/glyphs/U+005F/glyph.svg",
+        "source_bbox": [
+          138.5,
+          211.5,
+          281.5,
+          227.5
+        ],
+        "font_bbox": [
+          50,
+          -120,
+          765,
+          -40
+        ],
+        "advance_width": 820,
+        "left_side_bearing": 50,
+        "right_side_bearing": 55,
+        "vertical_class": "baseline-mark",
+        "scale": 5.0,
+        "contour_count": 1,
+        "hole_count": 0
+      },
+      {
+        "character": "a",
+        "codepoint": 97,
+        "glyph_name": "a",
+        "category": "영문",
+        "source_svg": "/mnt/data/handfont-studio-v1.5.0/services/font-builder/examples/poc-source-v1.5.0/glyphs/U+0061/glyph.svg",
+        "source_bbox": [
+          147.5,
+          136.5,
+          284.5,
+          282.5
+        ],
+        "font_bbox": [
+          60,
+          0,
+          529,
+          500
+        ],
+        "advance_width": 590,
+        "left_side_bearing": 60,
+        "right_side_bearing": 60,
+        "vertical_class": "x-height",
+        "scale": 3.424658,
+        "contour_count": 2,
+        "hole_count": 1
+      },
+      {
+        "character": "b",
+        "codepoint": 98,
+        "glyph_name": "b",
+        "category": "영문",
+        "source_svg": "/mnt/data/handfont-studio-v1.5.0/services/font-builder/examples/poc-source-v1.5.0/glyphs/U+0062/glyph.svg",
+        "source_bbox": [
+          129.5,
+          102.5,
+          281.475,
+          316.5
+        ],
+        "font_bbox": [
+          60,
+          0,
+          557,
+          700
+        ],
+        "advance_width": 620,
+        "left_side_bearing": 60,
+        "right_side_bearing": 62,
+        "vertical_class": "ascender",
+        "scale": 3.271028,
+        "contour_count": 2,
+        "hole_count": 1
+      },
+      {
+        "character": "c",
+        "codepoint": 99,
+        "glyph_name": "c",
+        "category": "영문",
+        "source_svg": "/mnt/data/handfont-studio-v1.5.0/services/font-builder/examples/poc-source-v1.5.0/glyphs/U+0063/glyph.svg",
+        "source_bbox": [
+          152.52,
+          136.5,
+          274.5,
+          282.5
+        ],
+        "font_bbox": [
+          60,
+          0,
+          478,
+          500
+        ],
+        "advance_width": 540,
+        "left_side_bearing": 60,
+        "right_side_bearing": 62,
+        "vertical_class": "x-height",
+        "scale": 3.424658,
+        "contour_count": 1,
+        "hole_count": 0
+      },
+      {
+        "character": "d",
+        "codepoint": 100,
+        "glyph_name": "d",
+        "category": "영문",
+        "source_svg": "/mnt/data/handfont-studio-v1.5.0/services/font-builder/examples/poc-source-v1.5.0/glyphs/U+0064/glyph.svg",
+        "source_bbox": [
+          137.52,
+          102.534,
+          290.5,
+          316.5
+        ],
+        "font_bbox": [
+          60,
+          0,
+          560,
+          700
+        ],
+        "advance_width": 630,
+        "left_side_bearing": 60,
+        "right_side_bearing": 69,
+        "vertical_class": "ascender",
+        "scale": 3.271554,
+        "contour_count": 2,
+        "hole_count": 1
+      },
+      {
+        "character": "e",
+        "codepoint": 101,
+        "glyph_name": "e",
+        "category": "영문",
+        "source_svg": "/mnt/data/handfont-studio-v1.5.0/services/font-builder/examples/poc-source-v1.5.0/glyphs/U+0065/glyph.svg",
+        "source_bbox": [
+          149.52,
+          136.5,
+          274.5,
+          282.5
+        ],
+        "font_bbox": [
+          60,
+          0,
+          488,
+          500
+        ],
+        "advance_width": 550,
+        "left_side_bearing": 60,
+        "right_side_bearing": 61,
+        "vertical_class": "x-height",
+        "scale": 3.424658,
+        "contour_count": 2,
+        "hole_count": 1
+      },
+      {
+        "character": "f",
+        "codepoint": 102,
+        "glyph_name": "f",
+        "category": "영문",
+        "source_svg": "/mnt/data/handfont-studio-v1.5.0/services/font-builder/examples/poc-source-v1.5.0/glyphs/U+0066/glyph.svg",
+        "source_bbox": [
+          161.5,
+          103.5,
+          265.5,
+          314.5
+        ],
+        "font_bbox": [
+          60,
+          0,
+          405,
+          700
+        ],
+        "advance_width": 470,
+        "left_side_bearing": 60,
+        "right_side_bearing": 64,
+        "vertical_class": "ascender",
+        "scale": 3.317536,
+        "contour_count": 1,
+        "hole_count": 0
+      },
+      {
+        "character": "g",
+        "codepoint": 103,
+        "glyph_name": "g",
+        "category": "영문",
+        "source_svg": "/mnt/data/handfont-studio-v1.5.0/services/font-builder/examples/poc-source-v1.5.0/glyphs/U+0067/glyph.svg",
+        "source_bbox": [
+          145.52,
+          102.5,
+          284.4,
+          316.5
+        ],
+        "font_bbox": [
+          60,
+          -200,
+          514,
+          500
+        ],
+        "advance_width": 580,
+        "left_side_bearing": 60,
+        "right_side_bearing": 65,
+        "vertical_class": "x-descender",
+        "scale": 3.271028,
+        "contour_count": 3,
+        "hole_count": 2
+      },
+      {
+        "character": "h",
+        "codepoint": 104,
+        "glyph_name": "h",
+        "category": "영문",
+        "source_svg": "/mnt/data/handfont-studio-v1.5.0/services/font-builder/examples/poc-source-v1.5.0/glyphs/U+0068/glyph.svg",
+        "source_bbox": [
+          129.5,
+          103.5,
+          292.0,
+          314.5
+        ],
+        "font_bbox": [
+          60,
+          0,
+          599,
+          700
+        ],
+        "advance_width": 660,
+        "left_side_bearing": 60,
+        "right_side_bearing": 60,
+        "vertical_class": "ascender",
+        "scale": 3.317536,
+        "contour_count": 1,
+        "hole_count": 0
+      },
+      {
+        "character": "i",
+        "codepoint": 105,
+        "glyph_name": "i",
+        "category": "영문",
+        "source_svg": "/mnt/data/handfont-studio-v1.5.0/services/font-builder/examples/poc-source-v1.5.0/glyphs/U+0069/glyph.svg",
+        "source_bbox": [
+          176.5,
+          107.5,
+          247.5,
+          310.5
+        ],
+        "font_bbox": [
+          45,
+          0,
+          220,
+          500
+        ],
+        "advance_width": 270,
+        "left_side_bearing": 45,
+        "right_side_bearing": 50,
+        "vertical_class": "x-height",
+        "scale": 2.463054,
+        "contour_count": 2,
+        "hole_count": 0
+      },
+      {
+        "character": "j",
+        "codepoint": 106,
+        "glyph_name": "j",
+        "category": "영문",
+        "source_svg": "/mnt/data/handfont-studio-v1.5.0/services/font-builder/examples/poc-source-v1.5.0/glyphs/U+006A/glyph.svg",
+        "source_bbox": [
+          164.5,
+          73.5,
+          236.5,
+          344.5
+        ],
+        "font_bbox": [
+          45,
+          -200,
+          231,
+          500
+        ],
+        "advance_width": 280,
+        "left_side_bearing": 45,
+        "right_side_bearing": 49,
+        "vertical_class": "x-descender",
+        "scale": 2.583026,
+        "contour_count": 2,
+        "hole_count": 0
+      },
+      {
+        "character": "k",
+        "codepoint": 107,
+        "glyph_name": "k",
+        "category": "영문",
+        "source_svg": "/mnt/data/handfont-studio-v1.5.0/services/font-builder/examples/poc-source-v1.5.0/glyphs/U+006B/glyph.svg",
+        "source_bbox": [
+          137.5,
+          102.5,
+          286.471,
+          315.45
+        ],
+        "font_bbox": [
+          60,
+          0,
+          550,
+          700
+        ],
+        "advance_width": 610,
+        "left_side_bearing": 60,
+        "right_side_bearing": 60,
+        "vertical_class": "ascender",
+        "scale": 3.287149,
+        "contour_count": 1,
+        "hole_count": 0
+      },
+      {
+        "character": "l",
+        "codepoint": 108,
+        "glyph_name": "l",
+        "category": "영문",
+        "source_svg": "/mnt/data/handfont-studio-v1.5.0/services/font-builder/examples/poc-source-v1.5.0/glyphs/U+006C/glyph.svg",
+        "source_bbox": [
+          174.5,
+          103.5,
+          246.5,
+          314.5
+        ],
+        "font_bbox": [
+          45,
+          0,
+          284,
+          700
+        ],
+        "advance_width": 330,
+        "left_side_bearing": 45,
+        "right_side_bearing": 46,
+        "vertical_class": "ascender",
+        "scale": 3.317536,
+        "contour_count": 1,
+        "hole_count": 0
+      },
+      {
+        "character": "m",
+        "codepoint": 109,
+        "glyph_name": "m",
+        "category": "영문",
+        "source_svg": "/mnt/data/handfont-studio-v1.5.0/services/font-builder/examples/poc-source-v1.5.0/glyphs/U+006D/glyph.svg",
+        "source_bbox": [
+          88.5,
+          137.5,
+          337.5,
+          280.5
+        ],
+        "font_bbox": [
+          55,
+          12,
+          905,
+          500
+        ],
+        "advance_width": 960,
+        "left_side_bearing": 55,
+        "right_side_bearing": 55,
+        "vertical_class": "x-height",
+        "scale": 3.413655,
+        "contour_count": 1,
+        "hole_count": 0
+      },
+      {
+        "character": "n",
+        "codepoint": 110,
+        "glyph_name": "n",
+        "category": "영문",
+        "source_svg": "/mnt/data/handfont-studio-v1.5.0/services/font-builder/examples/poc-source-v1.5.0/glyphs/U+006E/glyph.svg",
+        "source_bbox": [
+          130.5,
+          137.5,
+          293.5,
+          280.5
+        ],
+        "font_bbox": [
+          60,
+          0,
+          630,
+          500
+        ],
+        "advance_width": 690,
+        "left_side_bearing": 60,
+        "right_side_bearing": 60,
+        "vertical_class": "x-height",
+        "scale": 3.496503,
+        "contour_count": 1,
+        "hole_count": 0
+      },
+      {
+        "character": "o",
+        "codepoint": 111,
+        "glyph_name": "o",
+        "category": "영문",
+        "source_svg": "/mnt/data/handfont-studio-v1.5.0/services/font-builder/examples/poc-source-v1.5.0/glyphs/U+006F/glyph.svg",
+        "source_bbox": [
+          140.5,
+          136.5,
+          278.5,
+          282.5
+        ],
+        "font_bbox": [
+          60,
+          0,
+          533,
+          500
+        ],
+        "advance_width": 600,
+        "left_side_bearing": 60,
+        "right_side_bearing": 67,
+        "vertical_class": "x-height",
+        "scale": 3.424658,
+        "contour_count": 2,
+        "hole_count": 1
+      },
+      {
+        "character": "p",
+        "codepoint": 112,
+        "glyph_name": "p",
+        "category": "영문",
+        "source_svg": "/mnt/data/handfont-studio-v1.5.0/services/font-builder/examples/poc-source-v1.5.0/glyphs/U+0070/glyph.svg",
+        "source_bbox": [
+          130.5,
+          105.5,
+          282.5,
+          313.5
+        ],
+        "font_bbox": [
+          60,
+          -200,
+          572,
+          500
+        ],
+        "advance_width": 640,
+        "left_side_bearing": 60,
+        "right_side_bearing": 68,
+        "vertical_class": "x-descender",
+        "scale": 3.365385,
+        "contour_count": 2,
+        "hole_count": 1
+      },
+      {
+        "character": "q",
+        "codepoint": 113,
+        "glyph_name": "q",
+        "category": "영문",
+        "source_svg": "/mnt/data/handfont-studio-v1.5.0/services/font-builder/examples/poc-source-v1.5.0/glyphs/U+0071/glyph.svg",
+        "source_bbox": [
+          138.52,
+          105.5,
+          291.0,
+          313.5
+        ],
+        "font_bbox": [
+          60,
+          -200,
+          573,
+          500
+        ],
+        "advance_width": 640,
+        "left_side_bearing": 60,
+        "right_side_bearing": 66,
+        "vertical_class": "x-descender",
+        "scale": 3.365385,
+        "contour_count": 2,
+        "hole_count": 1
+      },
+      {
+        "character": "r",
+        "codepoint": 114,
+        "glyph_name": "r",
+        "category": "영문",
+        "source_svg": "/mnt/data/handfont-studio-v1.5.0/services/font-builder/examples/poc-source-v1.5.0/glyphs/U+0072/glyph.svg",
+        "source_bbox": [
+          163.5,
+          137.5,
+          265.5,
+          280.5
+        ],
+        "font_bbox": [
+          60,
+          0,
+          417,
+          500
+        ],
+        "advance_width": 480,
+        "left_side_bearing": 60,
+        "right_side_bearing": 63,
+        "vertical_class": "x-height",
+        "scale": 3.496503,
+        "contour_count": 1,
+        "hole_count": 0
+      },
+      {
+        "character": "s",
+        "codepoint": 115,
+        "glyph_name": "s",
+        "category": "영문",
+        "source_svg": "/mnt/data/handfont-studio-v1.5.0/services/font-builder/examples/poc-source-v1.5.0/glyphs/U+0073/glyph.svg",
+        "source_bbox": [
+          160.5,
+          136.5,
+          262.5,
+          282.5
+        ],
+        "font_bbox": [
+          60,
+          0,
+          409,
+          500
+        ],
+        "advance_width": 470,
+        "left_side_bearing": 60,
+        "right_side_bearing": 60,
+        "vertical_class": "x-height",
+        "scale": 3.424658,
+        "contour_count": 1,
+        "hole_count": 0
+      },
+      {
+        "character": "t",
+        "codepoint": 116,
+        "glyph_name": "t",
+        "category": "영문",
+        "source_svg": "/mnt/data/handfont-studio-v1.5.0/services/font-builder/examples/poc-source-v1.5.0/glyphs/U+0074/glyph.svg",
+        "source_bbox": [
+          168.5,
+          119.5,
+          258.5,
+          298.5
+        ],
+        "font_bbox": [
+          60,
+          0,
+          412,
+          700
+        ],
+        "advance_width": 480,
+        "left_side_bearing": 60,
+        "right_side_bearing": 68,
+        "vertical_class": "ascender",
+        "scale": 3.910615,
+        "contour_count": 1,
+        "hole_count": 0
+      },
+      {
+        "character": "u",
+        "codepoint": 117,
+        "glyph_name": "u",
+        "category": "영문",
+        "source_svg": "/mnt/data/handfont-studio-v1.5.0/services/font-builder/examples/poc-source-v1.5.0/glyphs/U+0075/glyph.svg",
+        "source_bbox": [
+          130.5,
+          136.5,
+          291.5,
+          282.5
+        ],
+        "font_bbox": [
+          60,
+          0,
+          611,
+          500
+        ],
+        "advance_width": 680,
+        "left_side_bearing": 60,
+        "right_side_bearing": 68,
+        "vertical_class": "x-height",
+        "scale": 3.424658,
+        "contour_count": 1,
+        "hole_count": 0
+      },
+      {
+        "character": "v",
+        "codepoint": 118,
+        "glyph_name": "v",
+        "category": "영문",
+        "source_svg": "/mnt/data/handfont-studio-v1.5.0/services/font-builder/examples/poc-source-v1.5.0/glyphs/U+0076/glyph.svg",
+        "source_bbox": [
+          134.518,
+          139.5,
+          285.5,
+          279.5
+        ],
+        "font_bbox": [
+          60,
+          0,
+          599,
+          500
+        ],
+        "advance_width": 660,
+        "left_side_bearing": 60,
+        "right_side_bearing": 60,
+        "vertical_class": "x-height",
+        "scale": 3.571429,
+        "contour_count": 1,
+        "hole_count": 0
+      },
+      {
+        "character": "w",
+        "codepoint": 119,
+        "glyph_name": "w",
+        "category": "영문",
+        "source_svg": "/mnt/data/handfont-studio-v1.5.0/services/font-builder/examples/poc-source-v1.5.0/glyphs/U+0077/glyph.svg",
+        "source_bbox": [
+          96.5,
+          139.5,
+          322.5,
+          279.5
+        ],
+        "font_bbox": [
+          55,
+          0,
+          862,
+          500
+        ],
+        "advance_width": 920,
+        "left_side_bearing": 55,
+        "right_side_bearing": 57,
+        "vertical_class": "x-height",
+        "scale": 3.571429,
+        "contour_count": 1,
+        "hole_count": 0
+      },
+      {
+        "character": "x",
+        "codepoint": 120,
+        "glyph_name": "x",
+        "category": "영문",
+        "source_svg": "/mnt/data/handfont-studio-v1.5.0/services/font-builder/examples/poc-source-v1.5.0/glyphs/U+0078/glyph.svg",
+        "source_bbox": [
+          136.518,
+          139.5,
+          281.5,
+          279.5
+        ],
+        "font_bbox": [
+          60,
+          0,
+          578,
+          500
+        ],
+        "advance_width": 640,
+        "left_side_bearing": 60,
+        "right_side_bearing": 62,
+        "vertical_class": "x-height",
+        "scale": 3.571429,
+        "contour_count": 1,
+        "hole_count": 0
+      },
+      {
+        "character": "y",
+        "codepoint": 121,
+        "glyph_name": "y",
+        "category": "영문",
+        "source_svg": "/mnt/data/handfont-studio-v1.5.0/services/font-builder/examples/poc-source-v1.5.0/glyphs/U+0079/glyph.svg",
+        "source_bbox": [
+          133.5,
+          105.5,
+          286.482,
+          313.5
+        ],
+        "font_bbox": [
+          60,
+          -200,
+          575,
+          500
+        ],
+        "advance_width": 640,
+        "left_side_bearing": 60,
+        "right_side_bearing": 65,
+        "vertical_class": "x-descender",
+        "scale": 3.365385,
+        "contour_count": 1,
+        "hole_count": 0
+      },
+      {
+        "character": "z",
+        "codepoint": 122,
+        "glyph_name": "z",
+        "category": "영문",
+        "source_svg": "/mnt/data/handfont-studio-v1.5.0/services/font-builder/examples/poc-source-v1.5.0/glyphs/U+007A/glyph.svg",
+        "source_bbox": [
+          146.553,
+          139.5,
+          273.5,
+          279.482
+        ],
+        "font_bbox": [
+          60,
+          0,
+          513,
+          500
+        ],
+        "advance_width": 580,
+        "left_side_bearing": 60,
+        "right_side_bearing": 66,
+        "vertical_class": "x-height",
+        "scale": 3.571882,
+        "contour_count": 1,
+        "hole_count": 0
+      },
+      {
+        "character": "{",
+        "codepoint": 123,
+        "glyph_name": "braceleft",
+        "category": "기호",
+        "source_svg": "/mnt/data/handfont-studio-v1.5.0/services/font-builder/examples/poc-source-v1.5.0/glyphs/U+007B/glyph.svg",
+        "source_bbox": [
+          182.5,
+          92.5,
+          246.5,
+          325.5
+        ],
+        "font_bbox": [
+          45,
+          -200,
+          306,
+          750
+        ],
+        "advance_width": 360,
+        "left_side_bearing": 45,
+        "right_side_bearing": 54,
+        "vertical_class": "delimiter",
+        "scale": 4.077253,
+        "contour_count": 1,
+        "hole_count": 0
+      },
+      {
+        "character": "}",
+        "codepoint": 125,
+        "glyph_name": "braceright",
+        "category": "기호",
+        "source_svg": "/mnt/data/handfont-studio-v1.5.0/services/font-builder/examples/poc-source-v1.5.0/glyphs/U+007D/glyph.svg",
+        "source_bbox": [
+          171.5,
+          92.5,
+          236.5,
+          325.5
+        ],
+        "font_bbox": [
+          45,
+          -200,
+          310,
+          750
+        ],
+        "advance_width": 360,
+        "left_side_bearing": 45,
+        "right_side_bearing": 49,
+        "vertical_class": "delimiter",
+        "scale": 4.077253,
+        "contour_count": 1,
+        "hole_count": 0
+      },
+      {
+        "character": "₩",
+        "codepoint": 8361,
+        "glyph_name": "uni20A9",
+        "category": "기호",
+        "source_svg": "/mnt/data/handfont-studio-v1.5.0/services/font-builder/examples/poc-source-v1.5.0/glyphs/U+20A9/glyph.svg",
+        "source_bbox": [
+          86.5,
+          114.5,
+          332.5,
+          304.5
+        ],
+        "font_bbox": [
+          60,
+          51,
+          900,
+          700
+        ],
+        "advance_width": 960,
+        "left_side_bearing": 60,
+        "right_side_bearing": 60,
+        "vertical_class": "currency-symbol",
+        "scale": 3.414634,
+        "contour_count": 6,
+        "hole_count": 5
+      }
+    ]
+  },
+  "validation": {
+    "fonttools_load": true,
+    "checksum_validation": true,
+    "tables": [
+      "DSIG",
+      "GlyphOrder",
+      "OS/2",
+      "cmap",
+      "glyf",
+      "head",
+      "hhea",
+      "hmtx",
+      "loca",
+      "maxp",
+      "name",
+      "post"
+    ],
+    "glyph_order_count": 90,
+    "cmap_count": 89,
+    "units_per_em": 1000,
+    "sample_missing_ascii": [],
+    "empty_outlines": [],
+    "metric_violations": [],
+    "font_bbox": [
+      45,
+      -200,
+      905,
+      750
+    ],
+    "fc_scan": true,
+    "pillow_load": true,
+    "rendered_nonempty_lines": 5,
+    "empty_rendered_glyphs": [],
+    "specimen": "font-specimen.png",
+    "glyph_grid": "glyph-grid.png"
+  }
+}

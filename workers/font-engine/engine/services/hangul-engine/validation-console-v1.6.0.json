@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.6.0",
+  "representative_syllables": 168,
+  "dataset_failures": [],
+  "unicode_roundtrip_failures": [],
+  "layout_class_counts": {
+    "compound-final": 7,
+    "compound-open": 7,
+    "horizontal-final": 51,
+    "horizontal-open": 23,
+    "vertical-final": 53,
+    "vertical-open": 27
+  },
+  "position_region_count": 447,
+  "unique_position_form_count": 175,
+  "empty_position_regions": [],
+  "vector_raster_iou": {
+    "minimum": 0.900315,
+    "mean": 0.935215,
+    "median": 0.935717,
+    "maximum": 0.962524
+  },
+  "node_reduction_ratio": {
+    "minimum": 0.699051,
+    "mean": 0.856991,
+    "maximum": 0.966218
+  },
+  "font": {
+    "internal_filename": "HandFontStudioHangulPoc-Regular.ttf",
+    "sha256": "91698ef581762a6a1865deeda15676de9685ecfbe70dcc882122985f283435dd",
+    "glyph_count": 170,
+    "mapped_codepoints": 169,
+    "hangul_cmap_count": 168,
+    "missing_tables": [],
+    "bounds_violations": [],
+    "empty_outlines": [],
+    "metric_violations": [],
+    "hangul_width_violations": [],
+    "empty_rendered_glyphs": [],
+    "font_bbox": [
+      59,
+      -40,
+      940,
+      760
+    ],
+    "unicode_range_bits": [
+      0,
+      56
+    ],
+    "codepage_range_bits": [
+      0,
+      19
+    ],
+    "deterministic_rebuild": true
+  },
+  "limitations": [
+    "입력은 실제 사용자 필기가 아니라 참조 글꼴을 래스터화한 합성 데이터입니다.",
+    "자모 위치 영역은 겹치는 레이아웃 휴리스틱이며 획 단위의 완전한 분할이 아닙니다.",
+    "168개 대표 음절만 cmap에 포함하며 11,172개 전체 완성형 조합은 다음 단계입니다."
+  ]
+}

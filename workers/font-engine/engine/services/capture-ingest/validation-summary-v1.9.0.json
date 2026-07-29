@@ -1,0 +1,104 @@
+{
+  "schema_version": "1.9.0",
+  "validation_date": "2026-07-29",
+  "data_availability": {
+    "real_capture_photos": false,
+    "synthetic_benchmark": true
+  },
+  "tests": {
+    "image_pipeline": {
+      "passed": 14,
+      "total": 14
+    },
+    "glyph_vectorizer": {
+      "passed": 17,
+      "total": 17
+    },
+    "font_builder": {
+      "passed": 12,
+      "total": 12
+    },
+    "hangul_engine": {
+      "passed": 7,
+      "total": 7
+    },
+    "hangul_composer": {
+      "passed": 4,
+      "total": 4
+    },
+    "capture_and_field_validation": {
+      "passed": 9,
+      "total": 9
+    },
+    "all": {
+      "passed": 63,
+      "total": 63
+    }
+  },
+  "synthetic_field_benchmark": {
+    "schema_version": "1.9.0",
+    "data_origin": "synthetic",
+    "count": 32,
+    "correct": 28,
+    "accuracy": 0.875,
+    "confusion_matrix": {
+      "accept": {
+        "accept": 6,
+        "review": 2,
+        "retake": 0,
+        "blocked": 0
+      },
+      "review": {
+        "accept": 0,
+        "review": 7,
+        "retake": 0,
+        "blocked": 1
+      },
+      "retake": {
+        "accept": 0,
+        "review": 0,
+        "retake": 7,
+        "blocked": 1
+      },
+      "blocked": {
+        "accept": 0,
+        "review": 0,
+        "retake": 0,
+        "blocked": 8
+      }
+    },
+    "truth_note": "합성 조건 라벨과 규칙 기반 판정의 일치율이며 실제 사용자 촬영 정확도가 아닙니다."
+  },
+  "integrated_session": {
+    "data_origin": "synthetic",
+    "input_files": 10,
+    "session_status": "review",
+    "status_counts": {
+      "accept": 1,
+      "review": 8,
+      "retake": 1,
+      "blocked": 0
+    },
+    "selected_pages": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "missing_pages": [],
+    "duplicate_pages": [
+      3
+    ]
+  },
+  "reproducibility": {
+    "normalized_report_sha256": "02fa4e73ac166a2492caba5141293d8d0bda2d2fbe0d19ea95ba3debb5e16a6d",
+    "matched_on_repeat": true
+  },
+  "font_binaries_in_distribution": 0,
+  "truth_note": "실사용 성능 수치는 실제 손글씨 촬영본 입력 후 별도로 산정해야 한다."
+}

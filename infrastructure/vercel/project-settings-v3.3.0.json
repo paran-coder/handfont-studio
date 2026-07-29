@@ -1,0 +1,17 @@
+{
+  "projectName": "handfont-studio-web",
+  "frameworkPreset": "Next.js",
+  "rootDirectory": "apps/web",
+  "includeSourceFilesOutsideRootDirectory": true,
+  "productionBranch": "main",
+  "nodeVersion": "22.x",
+  "installCommand": "cd ../.. && corepack enable && pnpm install --frozen-lockfile",
+  "buildCommand": "cd ../.. && pnpm --filter @handfont/web build",
+  "developmentCommand": "cd ../.. && pnpm --filter @handfont/web dev",
+  "outputDirectory": ".next",
+  "notes": [
+    "Vercel 대시보드에서 수동 입력할 참고값입니다.",
+    "pnpm-lock.yaml 생성 전에는 --frozen-lockfile을 사용할 수 없습니다.",
+    "Root Directory 밖 packages/contracts를 빌드에 포함해야 합니다."
+  ]
+}

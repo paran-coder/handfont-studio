@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.4.0",
+  "svg_files_checked": 15,
+  "svg_errors": [],
+  "representative_benchmark": {
+    "samples": 7,
+    "minimum_iou": 0.902876631079478,
+    "mean_iou": 0.942326089898792,
+    "minimum_node_reduction_ratio": 0.698427382053654,
+    "mean_node_reduction_ratio": 0.8048043299974678
+  },
+  "image_pipeline_integration": {
+    "ok": true,
+    "found": 35,
+    "processed": 8,
+    "skipped": 27,
+    "failed": 0
+  },
+  "font_files_in_package": []
+}

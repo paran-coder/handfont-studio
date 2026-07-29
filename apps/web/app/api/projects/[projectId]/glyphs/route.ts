@@ -1,0 +1,2 @@
+import {getProject,listGlyphs} from '@/lib/repository';import {asNumber} from '@/lib/http';import {jsonError} from '@/lib/security';
+export async function GET(request:Request,{params}:{params:Promise<{projectId:string}>}){const {projectId}=await params;if(!await getProject(projectId))return jsonError('프로젝트를 찾을 수 없습니다.',404);const u=new URL(request.url);return Response.json(await listGlyphs(projectId,{status:u.searchParams.get('status')??undefined,page:asNumber(u.searchParams.get('page')),q:u.searchParams.get('q')??undefined}))}

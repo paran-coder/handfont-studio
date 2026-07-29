@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.8.0",
+  "complete_session": {
+    "complete": true,
+    "selected_pages": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "manual_pages": [
+      7
+    ],
+    "duplicate_pages": [
+      3
+    ],
+    "failed_inputs": 0,
+    "position_coverage": {
+      "expected_position_forms": 175,
+      "covered_position_forms": 171,
+      "review_position_forms": 4,
+      "missing_position_forms": 0,
+      "coverage_ratio": 1.0,
+      "clean_coverage_ratio": 0.977143
+    },
+    "vectorization": {
+      "processed": 64,
+      "failed_or_skipped": 0
+    }
+  },
+  "missing_page_session": {
+    "complete": false,
+    "selected_pages": [
+      1,
+      2,
+      3,
+      4,
+      6,
+      7,
+      8,
+      9
+    ],
+    "missing_pages": [
+      5
+    ]
+  }
+}

@@ -1,0 +1,25 @@
+HandFont Studio v3.2.0 validation
+
+web-contracts: 3 passed
+worker-unit: 4 passed
+image-pipeline core: 14 passed
+glyph-vectorizer core: 9 passed
+font-builder core: 6 passed
+hangul-engine core: 5 passed
+hangul-composer core: 1 passed
+capture-ingest: 9 passed
+orchestrator: 10 passed
+
+Total deployment-relevant automated tests: 61 passed
+python-compile: PASS
+node-syntax: PASS
+typescript-static: PASS
+font-binary-safety: PASS
+runtime-artifact-safety: PASS
+
+Notes:
+- Legacy tests that depend on large generated benchmark fixtures were not included in the deployment repository test set.
+- Before packaging, the actual Flexcil page-1 screenshot was processed end-to-end: 35 glyphs, 0 review items, mean tolerant F1 1.0.
+- Those 35 glyphs were exported through the new worker adapter to an internal TTF: 37 total glyphs, 36 cmap entries, 35 Hangul entries, 0 validation violations.
+- Temporary user-derived inputs and generated font artifacts were deleted before packaging.
+- A full pnpm install / Next.js production build could not be executed in this environment because npm registry DNS access was unavailable. GitHub Actions is configured to perform install, test, typecheck, and build after push.

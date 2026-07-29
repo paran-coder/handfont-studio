@@ -1,0 +1,4 @@
+opencv-python-headless>=4.10,<5
+numpy>=2,<3
+Pillow>=12,<13
+pytest>=8,<10

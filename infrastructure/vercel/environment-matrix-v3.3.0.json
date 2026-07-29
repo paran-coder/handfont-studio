@@ -1,0 +1,60 @@
+{
+  "web": {
+    "development": {
+      "DATABASE_URL": "local PostgreSQL URL",
+      "APP_BASE_URL": "http://localhost:3000",
+      "WORKER_SHARED_SECRET": "local random secret",
+      "STORAGE_DRIVER": "local",
+      "NEXT_PUBLIC_STORAGE_DRIVER": "local",
+      "LOCAL_BLOB_DIR": "../../runtime/blob",
+      "QUEUE_DRIVER": "local",
+      "MAX_UPLOAD_BYTES": "26214400"
+    },
+    "preview": {
+      "DATABASE_URL": "preview database URL",
+      "WORKER_SHARED_SECRET": "preview-only random secret",
+      "STORAGE_DRIVER": "vercel",
+      "NEXT_PUBLIC_STORAGE_DRIVER": "vercel",
+      "BLOB_READ_WRITE_TOKEN": "preview private Blob token",
+      "QUEUE_DRIVER": "vercel",
+      "VERCEL_QUEUE_REGION": "icn1",
+      "VERCEL_QUEUE_TOPIC": "handfont-preview-jobs",
+      "MAX_UPLOAD_BYTES": "26214400"
+    },
+    "production": {
+      "DATABASE_URL": "production database URL",
+      "WORKER_SHARED_SECRET": "production-only random secret",
+      "STORAGE_DRIVER": "vercel",
+      "NEXT_PUBLIC_STORAGE_DRIVER": "vercel",
+      "BLOB_READ_WRITE_TOKEN": "production private Blob token",
+      "QUEUE_DRIVER": "vercel",
+      "VERCEL_QUEUE_REGION": "icn1",
+      "VERCEL_QUEUE_TOPIC": "handfont-production-jobs",
+      "MAX_UPLOAD_BYTES": "26214400"
+    }
+  },
+  "worker": {
+    "preview": {
+      "CONTROL_API_BASE_URL": "preview deployment URL",
+      "WORKER_SHARED_SECRET": "same as preview web",
+      "WORKER_STORAGE_DRIVER": "vercel",
+      "BLOB_READ_WRITE_TOKEN": "same preview Blob token",
+      "QUEUE_DRIVER": "vercel",
+      "VERCEL_QUEUE_REGION": "icn1",
+      "VERCEL_QUEUE_TOPIC": "handfont-preview-jobs",
+      "QUEUE_CONSUMER_GROUP": "font-engine-preview-v1",
+      "WORKER_RUNTIME_DIR": "/tmp/handfont-worker"
+    },
+    "production": {
+      "CONTROL_API_BASE_URL": "production domain",
+      "WORKER_SHARED_SECRET": "same as production web",
+      "WORKER_STORAGE_DRIVER": "vercel",
+      "BLOB_READ_WRITE_TOKEN": "same production Blob token",
+      "QUEUE_DRIVER": "vercel",
+      "VERCEL_QUEUE_REGION": "icn1",
+      "VERCEL_QUEUE_TOPIC": "handfont-production-jobs",
+      "QUEUE_CONSUMER_GROUP": "font-engine-production-v1",
+      "WORKER_RUNTIME_DIR": "/tmp/handfont-worker"
+    }
+  }
+}

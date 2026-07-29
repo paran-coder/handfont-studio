@@ -1,0 +1,3 @@
+import {createProject,listProjects} from '@/lib/repository';import {readJson} from '@/lib/http';import {jsonError} from '@/lib/security';
+export async function GET(){return Response.json(await listProjects())}
+export async function POST(request:Request){try{const body=await readJson<{name:string;familyName:string;description?:string}>(request);if(!body.name?.trim()||!body.familyName?.trim())return jsonError('프로젝트 이름과 폰트 이름이 필요합니다.');return Response.json(await createProject({name:body.name.trim(),familyName:body.familyName.trim(),description:body.description?.trim()}),{status:201})}catch(e){return jsonError(e instanceof Error?e.message:'프로젝트 생성 실패')}}

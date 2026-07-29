@@ -1,0 +1,15 @@
+{
+  "version": "3.3.1",
+  "privacy_safe": true,
+  "source_user_uploads": 0,
+  "known_user_derived_hash_matches": 0,
+  "embedded_user_glyphs": 0,
+  "public_demo_user_assets": 0,
+  "preview_data": "synthetic-only",
+  "privacy_preflight": "passed",
+  "repository_preflight": "passed",
+  "api_schema_version": "3.3.0",
+  "notes": [
+    "pnpm-lock.yaml must be generated in a network-enabled environment"
+  ]
+}

@@ -1,0 +1,30 @@
+HandFont Studio v3.3.0 deployment-readiness validation
+
+web-contracts: 4 passed
+worker-unit: 4 passed
+image-pipeline core: 14 passed
+glyph-vectorizer core: 9 passed
+font-builder core: 6 passed
+hangul-engine core: 5 passed
+hangul-composer core: 1 passed
+capture-ingest: 9 passed
+orchestrator: 10 passed
+
+Total deployment-relevant automated tests: 62 passed
+repository-preflight: PASS
+first-commit dry-run: PASS
+environment-validator: PASS
+secret-generator: PASS
+python-compile: PASS
+node-syntax: PASS
+typescript-static-syntax: PASS
+font-binary-safety: PASS
+runtime-artifact-safety: PASS
+
+Not executed:
+- pnpm install / pnpm-lock.yaml generation
+- Next.js production build
+Reason: npm registry DNS access is unavailable in this execution environment.
+GitHub Actions is configured to run frozen-lockfile install, tests, typecheck, and production build after the lockfile is committed.
+
+Fixture-dependent legacy benchmark tests are excluded from the deployment repository test set because their large generated example directories are intentionally not shipped.

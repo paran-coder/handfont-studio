@@ -1,0 +1,28 @@
+name: 버그 보고
+about: 재현 가능한 결함을 보고합니다.
+title: "[Bug] "
+labels: [bug]
+body:
+  - type: textarea
+    id: summary
+    attributes:
+      label: 현상
+      description: 실제 비밀값과 사용자 작성본은 첨부하지 마십시오.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: 재현 단계
+    validations:
+      required: true
+  - type: input
+    id: deployment
+    attributes:
+      label: 배포 환경
+      placeholder: Local / Preview / Production
+  - type: textarea
+    id: logs
+    attributes:
+      label: 비밀정보를 제거한 로그
+      render: shell

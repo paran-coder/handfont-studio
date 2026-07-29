@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "handfont-font-builder"
+version = "1.6.0"
+description = "SVG glyph to installable TrueType font proof of concept for HandFont Studio"
+requires-python = ">=3.11"
+dependencies = [
+  "fonttools>=4.63,<5",
+  "Pillow>=12,<13",
+]
+
+[project.scripts]
+handfont-font-builder = "handfont_fontbuilder.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["handfont_fontbuilder*"]

@@ -1,0 +1,35 @@
+{
+  "version": "3.3.0",
+  "status": "conditionally_ready_for_first_push",
+  "tests": {
+    "web_contracts": {"passed": 4, "total": 4},
+    "worker_unit": {"passed": 4, "total": 4},
+    "image_pipeline": {"passed": 14, "total": 14},
+    "glyph_vectorizer": {"passed": 9, "total": 9},
+    "font_builder": {"passed": 6, "total": 6},
+    "hangul_engine": {"passed": 5, "total": 5},
+    "hangul_composer": {"passed": 1, "total": 1},
+    "capture_ingest": {"passed": 9, "total": 9},
+    "orchestrator": {"passed": 10, "total": 10},
+    "total": {"passed": 62, "total": 62}
+  },
+  "checks": {
+    "repository_preflight": true,
+    "first_commit_dry_run": true,
+    "environment_validator": true,
+    "secret_generator": true,
+    "python_compile": true,
+    "node_syntax": true,
+    "typescript_static_syntax": true,
+    "font_binary_count": 0,
+    "runtime_artifact_count": 0
+  },
+  "not_executed": [
+    "pnpm install",
+    "pnpm-lock.yaml generation",
+    "Next.js production build",
+    "remote GitHub push",
+    "Vercel resource provisioning"
+  ],
+  "next_required_action": "Run pnpm install on a network-enabled machine, commit pnpm-lock.yaml, rerun repo preflight, then push to GitHub."
+}

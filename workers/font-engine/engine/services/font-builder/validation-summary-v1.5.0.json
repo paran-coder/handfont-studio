@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.5.0",
+  "tests": {
+    "passed": 11,
+    "failed": 0
+  },
+  "source": {
+    "requested": 88,
+    "generated": 88,
+    "failures": 0
+  },
+  "font_build": {
+    "glyph_count": 90,
+    "mapped_codepoints": 89,
+    "units_per_em": 1000,
+    "missing_tables": [],
+    "bounds_violations": [],
+    "internal_ttf_sha256": "91ac66fb84aa85509b9510e7f3246844ac3b34b7ac19f35598155551729f4544"
+  },
+  "validation": {
+    "checksum": true,
+    "fc_scan": true,
+    "pillow_load": true,
+    "empty_outlines": [],
+    "empty_rendered_glyphs": [],
+    "metric_violations": [],
+    "font_bbox": [
+      45,
+      -200,
+      905,
+      750
+    ]
+  },
+  "distribution_note": "Generated font binaries are excluded from downloadable packages; source code reproduces the validated build."
+}

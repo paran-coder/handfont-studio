@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "handfont-orchestrator"
+version = "2.1.0"
+description = "HandFont Studio end-to-end pipeline orchestrator"
+requires-python = ">=3.11"
+dependencies = [
+  "numpy>=2,<3",
+  "opencv-python-headless>=4.10,<5",
+  "Pillow>=12,<13",
+  "fonttools>=4.63,<5",
+  "CairoSVG>=2.7,<3",
+  "scikit-image>=0.25,<1",
+  "PyMuPDF>=1.24,<2",
+]
+
+[project.scripts]
+handfont-orchestrator = "handfont_orchestrator.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["handfont_orchestrator*"]

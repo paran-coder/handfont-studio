@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "handfont-glyph-vectorizer"
+version = "1.4.0"
+description = "Ink-mask to SVG Bezier outline proof of concept for HandFont Studio"
+requires-python = ">=3.11"
+dependencies = [
+  "numpy>=2.0,<3",
+  "opencv-python-headless>=4.10,<5",
+  "CairoSVG>=2.7,<3",
+  "scikit-image>=0.25,<1",
+]
+
+[project.scripts]
+handfont-glyph-vectorizer = "handfont_vectorizer.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["handfont_vectorizer*"]

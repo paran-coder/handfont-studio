@@ -1,0 +1,8 @@
+numpy>=2,<3
+opencv-python-headless>=4.10,<5
+Pillow>=12,<13
+fonttools>=4.63,<5
+CairoSVG>=2.7,<3
+scikit-image>=0.25,<1
+PyMuPDF>=1.24,<2
+pytest>=8,<10

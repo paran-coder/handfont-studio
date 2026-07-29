@@ -1,0 +1,9 @@
+.git
+node_modules
+.next
+runtime
+worker-runtime
+*.zip
+*.ttf
+*.otf
+*.woff*

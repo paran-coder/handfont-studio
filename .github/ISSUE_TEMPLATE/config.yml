@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 보안 취약점
+    url: https://github.com/OWNER/REPOSITORY/security/advisories/new
+    about: 저장소 생성 후 OWNER/REPOSITORY를 실제 값으로 바꾸십시오.

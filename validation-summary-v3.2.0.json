@@ -1,0 +1,44 @@
+{
+  "version": "3.2.0",
+  "status": "deployment-ready-private-beta",
+  "automated_tests": {
+    "passed": 61,
+    "failed": 0,
+    "groups": {
+      "web_contracts": 3,
+      "worker_unit": 4,
+      "image_pipeline_core": 14,
+      "glyph_vectorizer_core": 9,
+      "font_builder_core": 6,
+      "hangul_engine_core": 5,
+      "hangul_composer_core": 1,
+      "capture_ingest": 9,
+      "orchestrator": 10
+    }
+  },
+  "end_to_end": {
+    "input": "Flexcil page-1 screenshot",
+    "selected_pages": [1],
+    "glyph_count": 35,
+    "review_count": 0,
+    "mean_tolerant_f1": 1.0,
+    "font_glyph_count": 37,
+    "cmap_count": 36,
+    "hangul_cmap_count": 35,
+    "validation_violations": 0
+  },
+  "static_checks": {
+    "python_compile": true,
+    "node_syntax": true,
+    "typescript_contract": true,
+    "font_binaries_in_source": 0,
+    "runtime_user_files_in_source": 0
+  },
+  "not_executed": [
+    "GitHub remote push",
+    "Vercel production deployment",
+    "external PostgreSQL/Blob/Queue provisioning",
+    "external worker deployment",
+    "full Next.js production build in this sandbox due to unavailable npm registry DNS"
+  ]
+}

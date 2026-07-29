@@ -1,0 +1,66 @@
+name: ci
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  repository-preflight:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node scripts/repo-preflight.mjs
+
+  web:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10.14.0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm --filter @handfont/web test
+      - run: pnpm --filter @handfont/web typecheck
+      - run: pnpm --filter @handfont/web build
+        env:
+          DATABASE_URL: postgresql://user:pass@localhost:5432/db
+          APP_BASE_URL: http://localhost:3000
+          WORKER_SHARED_SECRET: 00000000000000000000000000000000
+          STORAGE_DRIVER: local
+          NEXT_PUBLIC_STORAGE_DRIVER: local
+          QUEUE_DRIVER: local
+
+  worker:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+          cache: pip
+      - run: pip install -r workers/font-engine/requirements.txt
+      - run: python -m pytest workers/font-engine/tests -q
+      - run: python -m compileall -q workers/font-engine/worker
+      - run: node --check workers/font-engine/queue-consumer.mjs
+
+  package-safety:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: '! find . -type f \( -iname "*.ttf" -o -iname "*.otf" -o -iname "*.woff" -o -iname "*.woff2" -o -iname "*.db" -o -iname "*.sqlite" \) | grep .'
+      - run: '! find . \( -path "*/runtime/*" -o -path "*/worker-runtime/*" \) -type f | grep .'

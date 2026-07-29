@@ -1,0 +1,6 @@
+numpy>=2.0,<3
+opencv-python-headless>=4.10,<5
+CairoSVG>=2.7,<3
+scikit-image>=0.25,<1
+Pillow>=11,<13
+pytest>=8,<10

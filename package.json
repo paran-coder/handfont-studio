@@ -1,0 +1,25 @@
+{
+  "name": "handfont-studio",
+  "private": true,
+  "version": "3.3.2",
+  "packageManager": "pnpm@10.14.0",
+  "workspaces": [
+    "apps/*",
+    "packages/*",
+    "workers/*"
+  ],
+  "scripts": {
+    "dev": "pnpm --filter @handfont/web dev",
+    "build": "pnpm --filter @handfont/web build",
+    "typecheck": "pnpm -r typecheck",
+    "test": "pnpm --filter @handfont/web test && python -m pytest workers/font-engine/tests -q",
+    "db:migrate": "pnpm --filter @handfont/web db:migrate",
+    "repo:check": "node scripts/privacy-preflight.mjs && node scripts/repo-preflight.mjs",
+    "env:check": "node scripts/check-env.mjs .env",
+    "secret:generate": "node scripts/generate-worker-secret.mjs",
+    "privacy:check": "node scripts/privacy-preflight.mjs"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

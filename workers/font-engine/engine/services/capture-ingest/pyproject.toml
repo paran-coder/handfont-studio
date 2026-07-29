@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "handfont-capture-ingest"
+version = "1.9.0"
+description = "HandFont Studio multi-page capture ingest and field validation service"
+requires-python = ">=3.10"
+dependencies = ["numpy", "opencv-python", "Pillow", "fonttools"]
+
+[project.scripts]
+handfont-capture = "handfont_capture.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["handfont_capture*"]
