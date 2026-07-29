@@ -4,9 +4,10 @@ import { JobButton } from '@/components/JobButton';
 import { ProjectDeleteButton } from '@/components/ProjectDeleteButton';
 import { TemplateDownloads } from '@/components/TemplateDownloads';
 import { UploadClient } from '@/components/UploadClient';
+import { requireOwnerId } from '@/lib/owner';
 import {
   getLatestCompletedExport,
-  getProject,
+  getOwnedProject,
   listGlyphs,
   listUploads,
 } from '@/lib/repository';
@@ -19,7 +20,8 @@ export default async function Project({
   params: Promise<{ projectId: string }>;
 }) {
   const { projectId } = await params;
-  const project: any = await getProject(projectId);
+  const ownerId = await requireOwnerId();
+  const project: any = await getOwnedProject(projectId, ownerId);
   if (!project) notFound();
 
   const uploads = (await listUploads(projectId)) as any[];

@@ -1,0 +1,23 @@
+{
+  "version": "3.3.6",
+  "feature": "browser-scoped anonymous project ownership",
+  "web_contract_tests": {
+    "passed": 11,
+    "failed": 0
+  },
+  "worker_tests": {
+    "passed": 4,
+    "failed": 0
+  },
+  "typescript_syntax_contract_check": "passed",
+  "python_compileall": "passed",
+  "node_syntax": "passed",
+  "privacy_preflight_files": 337,
+  "repository_preflight_files": 337,
+  "next_production_build": "not_run_registry_dns_unavailable",
+  "new_environment_variables": [],
+  "database_migration_required_for_functionality": false,
+  "legacy_anonymous_projects_auto_claimed": false,
+  "hotfix_overlay_simulation": "passed",
+  "zip_integrity": "passed"
+}

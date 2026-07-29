@@ -29,7 +29,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <span className="brandMark">H</span>
               <span>
                 HandFont Studio
-                <small>Cloud Web · v3.3.4</small>
+                <small>Cloud Web · v3.3.6</small>
               </span>
             </Link>
             <nav className="nav">

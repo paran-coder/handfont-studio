@@ -32,3 +32,21 @@ declare module 'node:fs/promises' {
 }
 declare module 'node:path' { const path:any; export default path; }
 declare module 'next' { export type Metadata = any; }
+declare module 'next/headers' {
+  export function cookies(): Promise<{ get(name:string): { value:string } | undefined }>;
+}
+declare module 'next/server' {
+  export type NextRequest = any;
+  export class NextResponse extends Response {
+    cookies: { set(options:any): void };
+    static next(options?:any): NextResponse;
+    static redirect(url:any): NextResponse;
+    static json(body:any, init?:any): NextResponse;
+  }
+}
+declare module 'node:crypto' {
+  export function randomUUID(): string;
+  export function randomBytes(size:number): { toString(encoding:string): string };
+  export function createHash(name:string): { update(value:string): any; digest(encoding:string): string };
+  export function timingSafeEqual(a:any,b:any): boolean;
+}

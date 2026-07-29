@@ -1,4 +1,4 @@
-# HandFont Studio v3.3.1 Manifest
+# HandFont Studio v3.3.6 Manifest
 
 ## 애플리케이션
 
@@ -6,31 +6,43 @@
 - `workers/font-engine`: Docker Python 폰트 워커
 - `packages/contracts`: schemaVersion 3.3.0 공용 계약
 
-## 배포 준비
+## v3.3.6 익명 소유권
 
-- `scripts/repo-preflight.mjs`
-- `scripts/check-env.mjs`
-- `scripts/generate-worker-secret.mjs`
-- `scripts/first-commit.sh`
-- `infrastructure/vercel/project-settings-v3.3.1.json`
-- `infrastructure/vercel/environment-matrix-v3.3.1.json`
+- `apps/web/proxy.ts`
+- `apps/web/lib/owner-config.ts`
+- `apps/web/lib/owner.ts`
+- `apps/web/lib/repository.ts`
+- `apps/web/lib/project-delete.ts`
+- `apps/web/app/api/projects/**`
+- `apps/web/app/api/jobs/**`
+- `apps/web/app/api/uploads/**`
+- `apps/web/app/api/blob/route.ts`
+- `infrastructure/migrations/0002_anonymous_ownership.sql`
+
+## 기존 사용자 기능
+
+- `apps/web/public/templates/handfont-writing-template.pdf`
+- `apps/web/public/templates/handfont-writing-template-png.zip`
+- `apps/web/components/TemplateDownloads.tsx`
+- `apps/web/components/ProjectDeleteButton.tsx`
+- `apps/web/app/projects/[projectId]/page.tsx`
+- `apps/web/app/page.tsx`
 
 ## 핵심 문서
 
-- `docs/github-first-push-v3.3.1.md`
-- `docs/deployment-checklist-v3.3.1.md`
-- `docs/environment-variables-v3.3.1.md`
-- `docs/vercel-deployment-v3.3.1.md`
-- `docs/worker-deployment-v3.3.1.md`
-- `docs/post-deploy-smoke-test-v3.3.1.md`
-- `docs/architecture-v3.3.1.md`
-- `docs/api-contract-v3.3.1.md`
+- `README.md`
+- `User manual.md`
+- `context-notes.md`
+- `checklist.md`
+- `release-notes-v3.3.6.md`
 - `SECURITY.md`
 - `CONTRIBUTING.md`
 
-## v3.3.1 개인정보 안전 패치
+## 배포·검사
+
 - `scripts/privacy-preflight.mjs`
-- `docs/handfont-studio-v3.3.1-preview.html`
-- `release-notes-v3.3.1.md`
-- `final-validation-v3.3.1.md`
-- `validation-summary-v3.3.1.json`
+- `scripts/repo-preflight.mjs`
+- `scripts/check-env.mjs`
+- `infrastructure/migrations/0001_initial.sql`
+- `infrastructure/migrations/0002_anonymous_ownership.sql`
+- `.github/workflows/ci.yml`

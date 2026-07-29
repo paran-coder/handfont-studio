@@ -47,10 +47,14 @@ for (const file of files) {
 const required = [
   'README.md', 'User manual.md', 'context-notes.md', 'checklist.md', 'SECURITY.md', 'CONTRIBUTING.md',
   '.github/workflows/ci.yml', '.github/pull_request_template.md', '.github/dependabot.yml',
-  'release-notes-v3.3.4.md',
+  'release-notes-v3.3.6.md',
   'apps/web/public/templates/handfont-writing-template.pdf',
   'apps/web/public/templates/handfont-writing-template-png.zip',
-  'infrastructure/migrations/0001_initial.sql'
+  'infrastructure/migrations/0001_initial.sql',
+  'infrastructure/migrations/0002_anonymous_ownership.sql',
+  'apps/web/proxy.ts',
+  'apps/web/lib/owner.ts',
+  'apps/web/lib/owner-config.ts'
 ];
 const relFiles = new Set(files.map(file => path.relative(root, file).split(path.sep).join('/')));
 for (const name of required) if (!relFiles.has(name)) errors.push(`필수 파일 누락: /${name}`);
@@ -58,7 +62,7 @@ for (const name of required) if (!relFiles.has(name)) errors.push(`필수 파일
 const packageFiles = ['package.json', 'apps/web/package.json', 'packages/contracts/package.json', 'workers/font-engine/package.json'];
 for (const name of packageFiles) {
   const parsed = JSON.parse(await readFile(path.join(root, name), 'utf8'));
-  if (parsed.version !== '3.3.4') errors.push(`버전 불일치: /${name} = ${parsed.version}`);
+  if (parsed.version !== '3.3.6') errors.push(`버전 불일치: /${name} = ${parsed.version}`);
 }
 
 const gitignore = await readFile(path.join(root, '.gitignore'), 'utf8');

@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { ProjectDeleteButton } from '@/components/ProjectDeleteButton';
 import { TemplateDownloads } from '@/components/TemplateDownloads';
+import { requireOwnerId } from '@/lib/owner';
 import { listProjects } from '@/lib/repository';
 
 export const dynamic = 'force-dynamic';
@@ -8,9 +9,10 @@ export const dynamic = 'force-dynamic';
 export default async function Home() {
   let projects: any[] = [];
   try {
-    projects = (await listProjects()) as any[];
+    const ownerId = await requireOwnerId();
+    projects = (await listProjects(ownerId)) as any[];
   } catch {
-    // The empty state remains usable while the database is being configured.
+    // The empty state remains usable while the database or browser cookie is configured.
   }
 
   return (
@@ -35,6 +37,14 @@ export default async function Home() {
           </div>
         </div>
         <div className="paper">가나다<br />ABC 123</div>
+      </section>
+
+      <section className="ownershipNotice" aria-label="프로젝트 저장 안내">
+        <strong>로그인 없이 이 브라우저에 프로젝트가 연결됩니다.</strong>
+        <span>
+          다른 브라우저에서는 보이지 않으며, 브라우저 쿠키나 사이트 데이터를
+          삭제하면 기존 프로젝트에 다시 접근할 수 없습니다.
+        </span>
       </section>
 
       <div className="sectionHead">
@@ -71,7 +81,7 @@ export default async function Home() {
           ))
         ) : (
           <article className="card">
-            <h3>첫 프로젝트를 만드십시오.</h3>
+            <h3>이 브라우저의 첫 프로젝트를 만드십시오.</h3>
             <p className="muted">새 프로젝트 버튼으로 작업을 시작할 수 있습니다.</p>
           </article>
         )}

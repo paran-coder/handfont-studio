@@ -4,15 +4,31 @@
     "module": "ESNext",
     "moduleResolution": "Bundler",
     "jsx": "preserve",
-    "strict": false,
+    "strict": true,
     "skipLibCheck": true,
     "noEmit": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./*"],
-      "@handfont/contracts": ["../../packages/contracts/src/index.ts"]
+      "@/*": [
+        "./*"
+      ],
+      "@handfont/contracts": [
+        "../../packages/contracts/src/index.ts"
+      ]
     },
-    "lib": ["ES2022", "DOM", "DOM.Iterable"]
+    "lib": [
+      "ES2022",
+      "DOM",
+      "DOM.Iterable"
+    ]
   },
-  "include": ["app/**/*.ts", "app/**/*.tsx", "components/**/*.tsx", "lib/**/*.ts", "tests/type-shims.d.ts", "../../packages/contracts/src/index.ts"]
+  "include": [
+    "proxy.ts",
+    "app/**/*.ts",
+    "app/**/*.tsx",
+    "components/**/*.tsx",
+    "lib/**/*.ts",
+    "tests/type-shims.d.ts",
+    "../../packages/contracts/src/index.ts"
+  ]
 }

@@ -11,24 +11,38 @@ export const defaultStyle: StyleSettings = {
   lineHeight: 150,
 };
 
-export async function listProjects() {
-  return sql`select * from projects order by updated_at desc`;
+export async function listProjects(ownerId: string) {
+  return sql`
+    select * from projects
+    where owner_id=${ownerId}
+    order by updated_at desc`;
 }
 
+export async function getOwnedProject(projectId: string, ownerId: string) {
+  const [row] = await sql`
+    select * from projects
+    where id=${projectId} and owner_id=${ownerId}`;
+  return row ?? null;
+}
+
+/** Worker-only lookup. Public routes must use getOwnedProject. */
 export async function getProject(projectId: string) {
   const [row] = await sql`select * from projects where id=${projectId}`;
   return row ?? null;
 }
 
-export async function createProject(input: {
-  name: string;
-  familyName: string;
-  description?: string;
-}) {
+export async function createProject(
+  ownerId: string,
+  input: {
+    name: string;
+    familyName: string;
+    description?: string;
+  },
+) {
   const id = makeId('prj');
   const [row] = await sql`
-    insert into projects (id,name,family_name,description,style)
-    values (${id},${input.name},${input.familyName},${input.description ?? ''},${sql.json(defaultStyle)})
+    insert into projects (id,owner_id,name,family_name,description,style)
+    values (${id},${ownerId},${input.name},${input.familyName},${input.description ?? ''},${sql.json(defaultStyle)})
     returning *`;
   return row;
 }
@@ -38,6 +52,7 @@ export async function listUploads(projectId: string) {
 }
 
 export async function createUpload(input: {
+  ownerId: string;
   projectId: string;
   originalName: string;
   pathname: string;
@@ -48,10 +63,15 @@ export async function createUpload(input: {
   const id = makeId('upl');
   const [row] = await sql`
     insert into uploads (id,project_id,original_name,pathname,blob_url,content_type,size)
-    values (${id},${input.projectId},${input.originalName},${input.pathname},${input.blobUrl},${input.contentType},${input.size})
+    select ${id},p.id,${input.originalName},${input.pathname},${input.blobUrl},${input.contentType},${input.size}
+    from projects p
+    where p.id=${input.projectId} and p.owner_id=${input.ownerId}
     on conflict (pathname) do update set blob_url=excluded.blob_url, size=excluded.size
     returning *`;
-  await sql`update projects set current_step='upload', updated_at=now() where id=${input.projectId}`;
+  if (!row) throw new Error('PROJECT_NOT_FOUND');
+  await sql`
+    update projects set current_step='upload', updated_at=now()
+    where id=${input.projectId} and owner_id=${input.ownerId}`;
   return row;
 }
 
@@ -91,6 +111,7 @@ export async function replaceGlyphs(projectId: string, glyphs: GlyphResult[]) {
 }
 
 export async function createJob(
+  ownerId: string,
   projectId: string,
   kind: JobKind,
   payload: Record<string, unknown>,
@@ -99,12 +120,25 @@ export async function createJob(
   const idempotencyKey = `${projectId}:${kind}:${Date.now()}`;
   const [row] = await sql`
     insert into jobs (id,project_id,kind,payload,idempotency_key)
-    values (${id},${projectId},${kind},${sql.json(payload)},${idempotencyKey}) returning *`;
+    select ${id},p.id,${kind},${sql.json(payload)},${idempotencyKey}
+    from projects p
+    where p.id=${projectId} and p.owner_id=${ownerId}
+    returning *`;
+  if (!row) throw new Error('PROJECT_NOT_FOUND');
   return row;
 }
 
+/** Worker-only lookup. Public routes must use getOwnedJob. */
 export async function getJob(jobId: string) {
   const [row] = await sql`select * from jobs where id=${jobId}`;
+  return row ?? null;
+}
+
+export async function getOwnedJob(jobId: string, ownerId: string) {
+  const [row] = await sql`
+    select j.* from jobs j
+    join projects p on p.id=j.project_id
+    where j.id=${jobId} and p.owner_id=${ownerId}`;
   return row ?? null;
 }
 
@@ -148,8 +182,11 @@ export async function listProjectAssetUrls(projectId: string): Promise<string[]>
     .filter(Boolean);
 }
 
-export async function deleteProjectRecord(projectId: string) {
-  const [row] = await sql`delete from projects where id=${projectId} returning id`;
+export async function deleteProjectRecord(projectId: string, ownerId: string) {
+  const [row] = await sql`
+    delete from projects
+    where id=${projectId} and owner_id=${ownerId}
+    returning id`;
   return row ?? null;
 }
 
@@ -190,23 +227,34 @@ export async function leaseNextJob() {
   });
 }
 
-export async function setProjectStyle(projectId: string, style: StyleSettings) {
+export async function setProjectStyle(
+  ownerId: string,
+  projectId: string,
+  style: StyleSettings,
+) {
   const [row] = await sql`
     update projects set style=${sql.json(style)},updated_at=now()
-    where id=${projectId} returning *`;
+    where id=${projectId} and owner_id=${ownerId} returning *`;
   return row ?? null;
 }
 
 export async function blobBelongsToProject(
+  ownerId: string,
   projectId: string,
   url: string,
 ): Promise<boolean> {
   const [row] = await sql`
-    select 1 as ok from (
-      select blob_url as url from uploads where project_id=${projectId}
-      union all select svg_url from glyphs where project_id=${projectId}
-      union all select metadata_url from glyphs where project_id=${projectId}
-      union all select artifact_url from jobs where project_id=${projectId} and artifact_url is not null
-    ) owned where owned.url=${url} limit 1`;
+    select 1 as ok from projects p
+    where p.id=${projectId}
+      and p.owner_id=${ownerId}
+      and exists (
+        select 1 from (
+          select blob_url as url from uploads where project_id=p.id
+          union all select svg_url from glyphs where project_id=p.id
+          union all select metadata_url from glyphs where project_id=p.id
+          union all select artifact_url from jobs where project_id=p.id and artifact_url is not null
+        ) owned where owned.url=${url}
+      )
+    limit 1`;
   return Boolean(row);
 }

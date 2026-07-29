@@ -1,7 +1,8 @@
 import { handleUpload, type HandleUploadBody } from '@vercel/blob/client';
-import { createUpload, getProject } from '@/lib/repository';
 import { env } from '@/lib/env';
-import { jsonError } from '@/lib/security';
+import { requireOwnerId } from '@/lib/owner';
+import { createUpload, getOwnedProject } from '@/lib/repository';
+import { jsonError, ownerErrorResponse } from '@/lib/security';
 
 type UploadCompletedArguments = {
   blob: {
@@ -9,6 +10,14 @@ type UploadCompletedArguments = {
     url: string;
   };
   tokenPayload?: string | null;
+};
+
+type UploadPayload = {
+  projectId?: string;
+  originalName?: string;
+  contentType?: string;
+  size?: number;
+  ownerId?: string;
 };
 
 export async function POST(request: Request) {
@@ -29,12 +38,15 @@ export async function POST(request: Request) {
         _pathname: string,
         clientPayload: string | null,
       ) => {
-        const payload = JSON.parse(clientPayload ?? '{}');
+        const ownerId = await requireOwnerId();
+        const payload = JSON.parse(clientPayload ?? '{}') as UploadPayload;
 
-        if (!payload.projectId || !(await getProject(payload.projectId))) {
+        if (
+          !payload.projectId ||
+          !(await getOwnedProject(payload.projectId, ownerId))
+        ) {
           throw new Error('PROJECT_NOT_FOUND');
         }
-
         if (Number(payload.size) > env.maxUploadBytes) {
           throw new Error('FILE_TOO_LARGE');
         }
@@ -48,16 +60,23 @@ export async function POST(request: Request) {
           ],
           maximumSizeInBytes: env.maxUploadBytes,
           addRandomSuffix: true,
-          tokenPayload: clientPayload,
+          tokenPayload: JSON.stringify({ ...payload, ownerId }),
         };
       },
       onUploadCompleted: async ({
         blob,
         tokenPayload,
       }: UploadCompletedArguments) => {
-        const payload = JSON.parse(tokenPayload ?? '{}');
+        const payload = JSON.parse(tokenPayload ?? '{}') as UploadPayload;
+        if (!payload.projectId || !payload.ownerId) {
+          throw new Error('INVALID_UPLOAD_PAYLOAD');
+        }
+        if (!(await getOwnedProject(payload.projectId, payload.ownerId))) {
+          throw new Error('PROJECT_NOT_FOUND');
+        }
 
         await createUpload({
+          ownerId: payload.ownerId,
           projectId: payload.projectId,
           originalName:
             payload.originalName ??
@@ -73,9 +92,12 @@ export async function POST(request: Request) {
 
     return Response.json(response);
   } catch (error) {
-    return jsonError(
-      error instanceof Error ? error.message : '업로드 토큰 생성 실패',
-      400,
+    return (
+      ownerErrorResponse(error) ??
+      jsonError(
+        error instanceof Error ? error.message : '업로드 토큰 생성 실패',
+        400,
+      )
     );
   }
 }

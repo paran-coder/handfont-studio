@@ -1,19 +1,21 @@
-# HandFont Studio v3.3.4
+# HandFont Studio v3.3.6
 
 손글씨 작성 양식을 내려받고, 작성본을 업로드해 SVG 글리프와 TTF 폰트로 변환하는 GitHub·Vercel 배포형 모노레포입니다.
 
-## v3.3.4 주요 기능
+## v3.3.6 주요 기능
 
-- 9페이지 손글씨 작성 양식 PDF 다운로드
-- 페이지별 PNG 묶음 ZIP 다운로드
-- 프로젝트 목록·상세 화면에서 프로젝트 삭제
-- 삭제 시 업로드 이미지, 글리프 SVG·메타데이터, 완성 폰트 파일 정리
-- 프로젝트를 다시 연 뒤에도 최신 TTF 결과 재다운로드
-- 처리 중 작업이 있는 프로젝트의 실수 삭제 방지
+- 로그인 없이 브라우저마다 고유한 익명 소유권 자동 발급
+- 프로젝트 목록·상세·삭제를 현재 브라우저 소유 프로젝트로 제한
+- 업로드, 분석 작업, 결과 다운로드와 Blob 접근에 소유권 검사 적용
+- 쿠키 원문은 DB에 저장하지 않고 SHA-256 해시만 저장
+- 다른 소유자의 프로젝트 ID를 알아도 404로 처리
+- 기존 작성 양식 다운로드, 프로젝트 삭제, 결과 재다운로드 기능 유지
 
 ## 구성
 
 - `apps/web`: Next.js App Router 웹 UI와 제어 API
+- `apps/web/proxy.ts`: 익명 소유자 쿠키 발급
+- `apps/web/lib/owner.ts`: 소유자 토큰 검증·해시
 - `apps/web/public/templates`: 사용자 데이터가 없는 작성 양식 자산
 - `workers/font-engine`: 독립 Docker Python 폰트 워커
 - `packages/contracts`: 웹·워커 공용 계약
@@ -30,14 +32,6 @@ pnpm db:migrate
 pnpm dev
 ```
 
-다른 터미널에서 워커를 실행합니다.
-
-```bash
-cd workers/font-engine
-python -m pip install -r requirements.txt
-QUEUE_DRIVER=local python -m worker.local_runner
-```
-
 ## Vercel 배포 설정
 
 - Root Directory: `apps/web`
@@ -47,6 +41,20 @@ QUEUE_DRIVER=local python -m worker.local_runner
 - 필수 환경변수: `DATABASE_URL`, `WORKER_SHARED_SECRET`
 - 운영 기능용 연결: Private Vercel Blob, Queue, 외부 Python 워커
 
+## v3.3.6 데이터베이스 마이그레이션
+
+기능은 기존 `projects.owner_id` 열을 그대로 사용하므로 즉시 동작합니다. 트래픽이 늘기 전 Neon SQL Editor에서 다음 파일을 한 번 실행하면 소유자별 목록 조회 인덱스가 추가되고, 새 프로젝트의 공용 기본값도 제거됩니다.
+
+```text
+infrastructure/migrations/0002_anonymous_ownership.sql
+```
+
+기존 `owner_id='anonymous'` 프로젝트는 보안상 새 브라우저에 자동 이전하지 않습니다.
+
+## 익명 프로젝트의 특성
+
+프로젝트는 로그인 계정이 아니라 현재 브라우저의 보안 쿠키에 연결됩니다. 같은 브라우저에서는 다시 접속해도 프로젝트가 보이지만, 브라우저 데이터 삭제·시크릿 모드·다른 기기에서는 기존 프로젝트에 접근할 수 없습니다.
+
 ## 안전장치
 
 ```bash
@@ -54,9 +62,3 @@ pnpm privacy:check
 pnpm repo:check
 pnpm test
 ```
-
-프로젝트 삭제 API는 DB에 연결된 파일만 정리하며, 처리 중인 작업이 있으면 삭제를 거부합니다.
-
-## 운영 경계
-
-현재 버전에는 로그인·사용자별 프로젝트 소유권 검사가 없습니다. 소규모 비공개 베타 이후 공개하기 전 인증과 권한 검사를 추가해야 합니다.

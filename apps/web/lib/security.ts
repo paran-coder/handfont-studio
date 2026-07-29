@@ -1,5 +1,6 @@
 import { timingSafeEqual } from 'node:crypto';
 import { env } from './env';
+import { OwnerCookieError } from './owner';
 
 export function requireWorker(request: Request): void {
   const provided = request.headers.get('x-handfont-worker-secret') ?? '';
@@ -13,4 +14,11 @@ export function requireWorker(request: Request): void {
 
 export function jsonError(message: string, status = 400): Response {
   return Response.json({ detail: message }, { status });
+}
+
+export function ownerErrorResponse(error: unknown): Response | null {
+  if (error instanceof OwnerCookieError) {
+    return jsonError(error.message, 401);
+  }
+  return null;
 }

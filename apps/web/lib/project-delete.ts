@@ -5,7 +5,7 @@ import { env } from './env';
 import {
   deleteProjectRecord,
   getActiveProjectJob,
-  getProject,
+  getOwnedProject,
   listProjectAssetUrls,
 } from './repository';
 
@@ -19,8 +19,11 @@ export class ProjectDeleteError extends Error {
   }
 }
 
-export async function deleteProjectWithAssets(projectId: string) {
-  const project = await getProject(projectId);
+export async function deleteProjectWithAssets(
+  ownerId: string,
+  projectId: string,
+) {
+  const project = await getOwnedProject(projectId, ownerId);
   if (!project) {
     throw new ProjectDeleteError('프로젝트를 찾을 수 없습니다.', 404);
   }
@@ -44,7 +47,7 @@ export async function deleteProjectWithAssets(projectId: string) {
     await del(remoteUrls);
   }
 
-  const deleted = await deleteProjectRecord(projectId);
+  const deleted = await deleteProjectRecord(projectId, ownerId);
   if (!deleted) {
     throw new ProjectDeleteError('프로젝트 삭제에 실패했습니다.', 500);
   }
