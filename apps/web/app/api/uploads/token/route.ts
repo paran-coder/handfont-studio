@@ -3,6 +3,14 @@ import { createUpload, getProject } from '@/lib/repository';
 import { env } from '@/lib/env';
 import { jsonError } from '@/lib/security';
 
+type UploadCompletedArguments = {
+  blob: {
+    pathname: string;
+    url: string;
+  };
+  tokenPayload?: string | null;
+};
+
 export async function POST(request: Request) {
   if (env.storageDriver === 'local') {
     return jsonError(
@@ -43,7 +51,10 @@ export async function POST(request: Request) {
           tokenPayload: clientPayload,
         };
       },
-      onUploadCompleted: async ({ blob, tokenPayload }) => {
+      onUploadCompleted: async ({
+        blob,
+        tokenPayload,
+      }: UploadCompletedArguments) => {
         const payload = JSON.parse(tokenPayload ?? '{}');
 
         await createUpload({

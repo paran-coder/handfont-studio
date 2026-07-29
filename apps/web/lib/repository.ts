@@ -47,7 +47,7 @@ export async function listGlyphs(projectId: string, filters: {status?:string; pa
     order by page, cell_id`;
 }
 export async function replaceGlyphs(projectId: string, glyphs: GlyphResult[]) {
-  await sql.begin(async tx => {
+  await sql.begin(async (tx: any) => {
     await tx`delete from glyphs where project_id=${projectId}`;
     for (const glyph of glyphs) {
       await tx`
@@ -85,7 +85,7 @@ export async function updateJob(jobId: string, patch: {status?:string; progress?
   return row ?? null;
 }
 export async function leaseNextJob() {
-  return sql.begin(async tx => {
+  return sql.begin(async (tx: any) => {
     const [row] = await tx`
       select * from jobs where status='queued' order by created_at
       for update skip locked limit 1`;
