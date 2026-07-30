@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@handfont/contracts": "workspace:*",
+    "@vercel/analytics": "^2.0.1",
     "@vercel/blob": "2.6.1",
     "@vercel/queue": "0.4.0",
     "next": "16.2.12",
